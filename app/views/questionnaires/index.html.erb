@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Questionnaires</h1>
+
+
+
+<div class="container">
+  <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Question1</th>
+        <th>Question2</th>
+        <th>Question3</th>
+        <th>Question4</th>
+        <th>Question5</th>
+        <th>Importance1</th>
+        <th>Importance2</th>
+        <th>Importance3</th>
+        <th>Importance4</th>
+        <th>Importance5</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @questionnaires.each do |questionnaire| %>
+        <tr>
+          <td><%= questionnaire.user %></td>
+          <td><%= questionnaire.question1 %></td>
+          <td><%= questionnaire.question2 %></td>
+          <td><%= questionnaire.question3 %></td>
+          <td><%= questionnaire.question4 %></td>
+          <td><%= questionnaire.question5 %></td>
+          <td><%= questionnaire.importance1 %></td>
+          <td><%= questionnaire.importance2 %></td>
+          <td><%= questionnaire.importance3 %></td>
+          <td><%= questionnaire.importance4 %></td>
+          <td><%= questionnaire.importance5 %></td>
+          <td><%= link_to 'Show', questionnaire %></td>
+          <td><%= link_to 'Edit', edit_questionnaire_path(questionnaire) %></td>
+          <td><%= link_to 'Destroy', questionnaire, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+<br>
+
+<%= link_to 'New Questionnaire', new_questionnaire_path %>
