@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
 
+gem 'custom_error_message', git: 'https://github.com/thethanghn/custom-err-msg.git'
+
 gem 'bootstrap', '~> 4.4.1'
 
 #Jquery-Rails
