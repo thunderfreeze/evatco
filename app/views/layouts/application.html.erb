@@ -15,7 +15,25 @@
   <body>
 
     <div class="container">
+
+
+  <p>
+    <% if user_signed_in? %>
+      <p>Bonjour <%= current_user.firstname %></p>
+
+      <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete %>
+
+    <% else %>
+
+      <%= link_to 'Se connecter', new_user_session_path %>
+      
+    <% end %>
+  </p>  
+
     <%= yield %>
     </div>
+
+
+
   </body>
 </html>

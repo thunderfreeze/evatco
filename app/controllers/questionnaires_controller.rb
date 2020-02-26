@@ -1,10 +1,11 @@
 class QuestionnairesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_questionnaire, only: [:show, :edit, :update, :destroy]
 
   # GET /questionnaires
   # GET /questionnaires.json
   def index
-    @questionnaires = Questionnaire.all
+    @questionnaires = current_user.questionnaires
   end
 
   # GET /questionnaires/1
@@ -25,6 +26,7 @@ class QuestionnairesController < ApplicationController
   # POST /questionnaires.json
   def create
     @questionnaire = Questionnaire.new(questionnaire_params)
+    @questionnaire.user = current_user
 
     respond_to do |format|
       if @questionnaire.save
