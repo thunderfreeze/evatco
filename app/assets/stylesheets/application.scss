@@ -210,7 +210,7 @@ a{
 
 .menu-link:after{
   content: '';
-  height: 2px;
+  height: 4px;
   width: 0;
   position: absolute;
   bottom: 0;
@@ -296,7 +296,8 @@ textarea{
 
 .form-container{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
   height: 200vh;
   width: 50%;
@@ -321,8 +322,43 @@ textarea{
   border-radius: 15px !important;
 }
 
-.question{
-  width: 50%;
+.question, .importance{
+  width: 34%;
+}
+
+.question div textarea{
+  height: 100px;
+}
+
+.importance div input{
+  height: 100px;
+}
+
+.form-inputs-questionnaire{
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container-questionnaire{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+  width: 20%;
+}
+
+.form-container-questionnaire div label{
+  font-size: 3rem;
+}
+
+.new-evaluation{
+  font-size: 5rem;
+  text-align: center;
 }
 
 
