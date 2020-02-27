@@ -14,7 +14,16 @@
 
   <body>
 
-
+    <div onclick="oui()" class="icon">
+      <div class="hamburger"></div>
+    </div>
+    <section class="menu-container">
+      <%= link_to 'Accueil', home_index_path, class: "menu-link" %>
+      <%= link_to 'New questionnaire', new_questionnaire_path, class: "menu-link" %>
+      <%= link_to 'Questionnaire', questionnaires_path, class: "menu-link" %>
+      <%= link_to 'Evaluation', evaluations_path, class: "menu-link" %>
+      <%= link_to 'New Evaluation', new_evaluation_path, class: "menu-link" %>
+    </section>
 
 
   <!-- <p>

@@ -175,6 +175,11 @@ a{
 
 .menu-container{
   position: fixed;
+  display: flex;
+  z-index: 80;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   height: 100vh;
   width: 100%;
   background-color: rgba(255, 255, 255, .5);
@@ -185,9 +190,38 @@ a{
 .menu-container.active{
   height: 100vh;
   width: 100%;
-  background-color: rgba(255, 255, 255, .5);
+  background-color: rgba(255, 255, 255, 1);
   transform: translateX(0);
   transition: .3s;
+}
+
+.menu-link{
+  color: #000;
+  position: relative;
+  font-size: 4rem;
+  font-family: 'Cabin', semi-bold;
+
+}
+
+.menu-link:hover{
+  text-decoration: none;
+  color: #000;
+}
+
+.menu-link:after{
+  content: '';
+  height: 2px;
+  width: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  transition: .2s;
+}
+
+.menu-link:hover:after{
+  width: 100%;
+  transition: .2s;
 }
 
 
@@ -285,4 +319,8 @@ textarea{
   color: #fff !important;
   font-size: 3rem !important;
   border-radius: 15px !important;
+}
+
+.question{
+  width: 50%;
 }
