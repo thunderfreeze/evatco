@@ -1,4 +1,52 @@
-<h1>Page d'accueil</h1>
+<%= image_tag "logo.png", alt: "Mon image", class: "logo" %>
+<div onclick="oui()" class="icon">
+  <div class="hamburger"></div>
+</div>
+<section class="menu-container"></section>
+
+<section class="first-container">
+  <div class="welcome-container">
+    <div class="welcome-container-text">
+      <h1 class="title">Bienvenue!</h1>
+      <p class="intro">L’atelier de l’évaluation vous propose de mesurer votre qualité de vie grâce à un nouvel outil original inspiré du Seiqol irlandais : le Qualiviscope. Cet outil vous permet de devenir acteur en indiquant vous même les 5 critères essentiels pour avoir une belle vie !</p>
+    </div>
+    <a href="#secondContainer" class="btn-continuer">CONTINUER</a>
+  </div>
+</section>
+<!-- <section class="transition">
+  <div></div>
+  <div></div>
+  <div></div>
+</section> -->
+
+<section id="secondContainer" class="second-container">
+  <h2>Important1</h2>
+  <input type="range" value="20" name="rangeInput" min="1" max="100" onchange="updateTextInput1(this.value);">
+  <input type="text" id="textInput" value="20">
+  <input type="text" id="newVal1" name="">
+  <h2>Important2</h2>
+  <input type="range" value="20" name="rangeInput" min="1" max="100" onchange="updateTextInput2(this.value);">
+  <input type="text" id="textInput2" value="20">
+  <input type="text" id="newVal2" name="">
+  <h2>Important3</h2>
+  <input type="range" value="20" name="rangeInput" min="1" max="100" onchange="updateTextInput3(this.value);">
+  <input type="text" id="textInput3" value="20">
+  <input type="text" id="newVal3" name="">
+  <h2>Important4</h2>
+  <input type="range" value="20" name="rangeInput" min="1" max="100" onchange="updateTextInput4(this.value);">
+  <input type="text" id="textInput4" value="20">
+  <input type="text" id="newVal4" name="">
+  <h2>Important5</h2>
+  <input type="range" value="20" name="rangeInput" min="1" max="100" onchange="updateTextInput5(this.value);">
+  <input type="text" id="textInput5" value="20">
+  <input type="text" id="newVal5" name="">
+
+  <h2>Résultat</h2>
+  <input type="text" id="textInput6" value="100">
+  <input type="text" id="newVal6" name="">
+
+  <div id="chart-div"></div>
+</section>
 
 
 <p> Je souhaite tester ma vie</p>

@@ -13,3 +13,225 @@
  */
 
 @import "bootstrap";
+
+
+
+/*les couleurs*/
+/*FCE1DD bege*/
+/*ED6B80 rose*/
+/*F8CF62 orange*/
+/*CAD639 vert jaune*/
+/*81B3A3 vert bleu*/
+/*384B9B bleu*/
+
+
+
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+a{
+  text-decoration: none;
+}
+
+
+.logo{
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  height: 50px;
+}
+
+
+/*FIRST CONTAINER STYLE*/
+
+.first-container{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(asset-path("background.svg"));
+  background-size: cover;
+}
+
+.welcome-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 30%;
+  height: 70%;
+  margin-top: 20vh;
+}
+
+.title{
+  color: #373A3C;
+  font-size: 7.9rem;
+  font-family: 'Cabin', semi-bold;
+  text-align: left;
+  margin-bottom: 5%;
+}
+
+.intro{
+  font-size: 2rem;
+  text-align: left;
+  font-family: 'Cabin', regular;
+  color: #373A3C;
+}
+
+.btn-continuer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFF;
+  background-color: #373A3C;
+  border: none;
+  font-size: 2rem;
+  padding: 15px;
+  width: 30%;
+  border-radius: 30px;
+  font-family: 'Cabin', bold;
+}
+
+.btn-continuer:hover{
+  color: grey;
+  text-decoration: none;
+}
+
+.icon{
+  position: fixed;
+  z-index: 99;
+  cursor: pointer;
+  top: 3%;
+  right: 2%;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+}
+
+.hamburger{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  height: 3px;
+  width: 70px;
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.hamburger:before{
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 15px;
+  height: 3px;
+  width: 70px;
+  background-color: rgba(0, 0, 0, 1);
+  transition: .2s;
+}
+
+.hamburger:after{
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -15px;
+  height: 3px;
+  width: 70px;
+  background-color: rgba(0, 0, 0, 1);
+  transition: .2s;
+}
+
+.icon.active .hamburger{
+  background-color: rgba(0, 0, 0, 0);
+  transition: .2s;
+}
+
+.icon.active .hamburger:before{
+  top: 0;
+  left: 0;
+  transform: rotate(45deg);
+  transition: .2s;
+}
+
+
+.icon.active .hamburger:after{
+  top: 0;
+  left: 0;
+  transform: rotate(135deg);
+  transition: .2s;
+}
+
+.menu-container{
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(255, 255, 255, .5);
+  transform: translateX(-100vw);
+  transition: .3s;
+}
+
+.menu-container.active{
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(255, 255, 255, .5);
+  transform: translateX(0);
+  transition: .3s;
+}
+
+
+.transition{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.transition div:nth-child(1){
+  width: 100%;
+  height: 33.3%;
+  background-color: #ed6b80;
+}
+
+.transition div:nth-child(2){
+  width: 100%;
+  height: 33.3%;
+  background-color: #384b9b;
+}
+
+.transition div:nth-child(3){
+  width: 100%;
+  height: 33.3%;
+  background-color: #cad639;
+}
+
+
+/*SECOND CONTAINER STYLE*/
+
+
+.second-container{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-color: #ed6b80;
+}
+
+
+#chart-div {
+  height: 350px;
+  width: 600px;
+}
