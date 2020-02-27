@@ -41,6 +41,15 @@ a{
   text-decoration: none;
 }
 
+h2{
+  font-size: 5rem !important;
+  width: 84%;
+  margin-top: 10vh !important;
+  margin-bottom: 10vh !important;
+  text-align: left;
+  font-family: 'Cabin', semi-bold;
+}
+
 
 .logo{
   position: absolute;
@@ -175,6 +184,8 @@ a{
 
 .menu-container{
   position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   z-index: 80;
   flex-direction: column;
@@ -258,13 +269,78 @@ a{
   height: 100vh;
   width: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  flex-direction: column;
   background-size: cover;
-  background-color: #ed6b80;
 }
 
+.img-container{
+  width: 84%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.img-text-etape{
+  width: 30%;
+}
+
+.etape{
+  font-size: 1.8rem;
+  font-family: 'Cabin', semi-bold;
+}
+
+.etape-description{
+  font-size: 1.4rem;
+  font-family: 'Cabin', regular;
+}
+
+.img-etape{
+  width: 100%;
+}
+
+.img-etape-text{
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-family: "Cabin", regular;
+}
+
+.etape-btn{
+  width: 30%;
+  display: flex;
+  align-items: center;
+  flex-direction: column-reverse;
+}
+
+.etape-btn a{
+  background-color: #000;
+  border-radius: 27px;
+  width: 40%;
+  height: 20%;
+  display: flex;
+  color: #fff;
+  text-decoration: none;
+  font-size: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.etape-btn a:hover{
+  background-color: #000;
+  border-radius: 27px;
+  width: 40%;
+  height: 20%;
+  display: flex;
+  color: #fff;
+  text-decoration: none;
+  font-size: 2rem;
+  justify-content: center;
+  align-items: center;
+}
 
 #chart-div {
   height: 350px;
@@ -275,6 +351,8 @@ a{
 .questionnaire-title{
   font-size: 5rem;
   text-align: center;
+  margin-bottom: 10vh;
+  margin-top: 10vh;
 }
 
 .text, .integer{
@@ -382,4 +460,11 @@ textarea{
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+
+.third-container{
+  height: 100vh;
+  width: 100%;
+  display: flex;
 }
