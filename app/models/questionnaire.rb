@@ -8,8 +8,18 @@ class Questionnaire < ApplicationRecord
 
 
 #Permet de définir que les champs doivent être remplis
-  validates_presence_of :question1, :message => "^Veuillez remplir ce champ"
+  validates_presence_of :question1, :message => "^Veuillez saisir une réponse pour ce champs"
+  validates_presence_of :question2, :message => "^Veuillez saisir une réponse pour ce champs"
+  validates_presence_of :question3, :message => "^Veuillez saisir une réponse pour ce champs"
+  validates_presence_of :question4, :message => "^Veuillez saisir une réponse pour ce champs"
+  validates_presence_of :question5, :message => "^Veuillez saisir une réponse pour ce champs"
+  validates_presence_of :importance1, :message => "^Veuillez saisir un nombre entre 1 et 96"
+  validates_presence_of :importance2, :message => "^Veuillez saisir un nombre entre 1 et 96"
+  validates_presence_of :importance3, :message => "^Veuillez saisir un nombre entre 1 et 96"
+  validates_presence_of :importance4, :message => "^Veuillez saisir un nombre entre 1 et 96"
+  validates_presence_of :importance5, :message => "^Veuillez saisir un nombre entre 1 et 96"
+  
 
-  validates :question2, :question3, :question4, :question5, :importance1, :importance2, :importance3, :importance4, :importance5,  presence: true
+  
 
 end

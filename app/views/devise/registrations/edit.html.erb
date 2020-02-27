@@ -18,9 +18,10 @@
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "last_name" }%>
-
-    
-
+    <%= f.date_select :date_of_birth,
+                autofocus: true,
+                min: Date.new(1950, 01, 01), max: Date.today, 
+                input_html: { autocomplete: "date_of_birth" } %>
     <%= f.input :password,
                 hint: "Ne rien mettre si vous ne voulez pas le changer",
                 required: false,
