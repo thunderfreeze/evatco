@@ -364,9 +364,9 @@ textarea{
 
 .rangevertical
 {
-margin-top:80px;
-transform:rotate(90deg);
-margin-bottom:80px;
+  margin-top:80px;
+  transform:rotate(-90deg);
+  margin-bottom:80px;
 
 }
 
@@ -374,4 +374,11 @@ margin-bottom:80px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+
+.slider-text-container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }

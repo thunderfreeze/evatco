@@ -51,6 +51,45 @@ function updateTextInput5(val5) {
   foo();
 }
 
+
+// vertical slider
+
+function updateslider1() {
+  slider1 = parseInt(document.getElementById('slider1').value);
+  console.log(slider1);
+  document.getElementById('output1').innerHTML = slider1;
+}
+
+function updateslider2() {
+  slider2 = parseInt(document.getElementById('slider2').value);
+  console.log(slider2);
+  document.getElementById('output2').innerHTML = slider2;
+}
+
+function updateslider3() {
+  slider3 = parseInt(document.getElementById('slider3').value);
+  console.log(slider3);
+  document.getElementById('output3').innerHTML = slider3;
+}
+
+function updateslider4() {
+  slider4 = parseInt(document.getElementById('slider4').value);
+  console.log(slider4);
+  document.getElementById('output4').innerHTML = slider4;
+}
+
+function updateslider5() {
+  slider5 = parseInt(document.getElementById('slider5').value);
+  console.log(slider5);
+  document.getElementById('output5').innerHTML = slider5;
+}
+
+
+
+
+
+
+
 function foo(){
   valbase = 20;
   val1 = parseInt(document.getElementById('textInput').value);
