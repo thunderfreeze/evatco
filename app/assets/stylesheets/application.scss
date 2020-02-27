@@ -236,3 +236,53 @@ a{
   height: 350px;
   width: 600px;
 }
+
+
+.questionnaire-title{
+  font-size: 5rem;
+  text-align: center;
+}
+
+.text, .integer{
+  font-size: 3rem;
+  font-family: 'Cabin', semi-bold;
+
+}
+
+textarea{
+  font-size: 2rem !important;
+}
+
+.form-inputs{
+  display: flex;
+  flex-direction: column;
+  height: 200vh;
+  align-items: center;
+}
+
+.form-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 200vh;
+  width: 50%;
+}
+
+
+.btn-light{
+  padding: 15px !important;
+  background-color: #000 !important;
+  color: #fff !important;
+  font-size: 3rem !important;
+  border-radius: 15px !important;
+}
+
+.btn-dark{
+  display: block !important;
+  margin: auto !important;
+  padding: 15px !important;
+  background-color: #000 !important;
+  color: #fff !important;
+  font-size: 3rem !important;
+  border-radius: 15px !important;
+}
