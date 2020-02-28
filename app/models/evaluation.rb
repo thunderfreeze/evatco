@@ -10,23 +10,23 @@ class Evaluation < ApplicationRecord
   before_save :compute_score
 
   def value1_ponderated
-    1.0 * value1 * questionnaire.importance1 / 100.0
+    1.0 * value1 * questionnaire.importance1 / 10.0
   end
 
   def value2_ponderated
-    1.0 * value2 * questionnaire.importance2 / 100.0
+    1.0 * value2 * questionnaire.importance2 / 10.0
   end
 
   def value3_ponderated
-    1.0 * value3 * questionnaire.importance3 / 100.0
+    1.0 * value3 * questionnaire.importance3 / 10.0
   end
 
   def value4_ponderated
-    1.0 * value4 * questionnaire.importance4 / 100.0
+    1.0 * value4 * questionnaire.importance4 / 10.0
   end
 
   def value5_ponderated
-    1.0 * value5 * questionnaire.importance5 / 100.0
+    1.0 * value5 * questionnaire.importance5 / 10.0
   end
 
   def to_s
