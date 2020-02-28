@@ -2,7 +2,7 @@ class Questionnaire < ApplicationRecord
   belongs_to :user
   has_many :evaluations
 
-  #Permet de définir que les champs doivent être remplis
+  # Permet de définir que les champs doivent être remplis
   validates_presence_of :question1, :message => "^Veuillez saisir une réponse pour ce champs"
   validates_presence_of :question2, :message => "^Veuillez saisir une réponse pour ce champs"
   validates_presence_of :question3, :message => "^Veuillez saisir une réponse pour ce champs"
