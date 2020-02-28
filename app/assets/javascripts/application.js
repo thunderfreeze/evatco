@@ -15,6 +15,42 @@
 //= require turbolinks
 //= require_tree .
 
+function rangeSlider1(){
+  var range1 = document.querySelector('#range1').value;
+  console.log(range1);
+  document.getElementById('score1').value = range1;
+}
+
+function rangeSlider2(){
+  var range2 = document.querySelector('#range2').value;
+  console.log(range2);
+  document.getElementById('score2').value = range2;
+}
+
+function rangeSlider3(){
+  var range3 = document.querySelector('#range3').value;
+  console.log(range3);
+  document.getElementById('score3').value = range3;
+}
+
+function rangeSlider4(){
+  var range4 = document.querySelector('#range4').value;
+  console.log(range4);
+  document.getElementById('score4').value = range4;
+}
+
+function rangeSlider5(){
+  var range5 = document.querySelector('#range5').value;
+  console.log(range5);
+  document.getElementById('score5').value = range5;
+}
+
+
+
+
+
+
+
 
 function oui(){
   var icon = document.querySelector('.icon');
