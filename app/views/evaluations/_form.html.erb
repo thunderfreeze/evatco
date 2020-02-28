@@ -1,9 +1,35 @@
 <%= simple_form_for(@evaluation) do |f| %>
+
+  <section id="fourthContainer" class="third-container">
+
   <%= f.association :questionnaire, as: :hidden %>
-  <%= f.input :value1 %>
-  <%= f.input :value2 %>
-  <%= f.input :value3 %>
-  <%= f.input :value4 %>
-  <%= f.input :value5 %>
-  <%= f.submit 'Enregistrer' %>
+  <div class="vertical-slider-container">
+    <div class="vertical-slider">
+      <%= f.input :value1, input_html: { class: 'input-vertical-slider', type: 'range', min: '0', max: '10', value: '5'}%>
+      <div class="satisfaction-div1"></div>
+    </div>
+
+    <div class="vertical-slider">
+      <%= f.input :value2, input_html: { class: 'input-vertical-slider', type: 'range', min: '0', max: '10', value: '5'}%>
+      <div class="satisfaction-div2"></div>
+    </div>
+
+    <div class="vertical-slider">
+      <%= f.input :value3, input_html: { class: 'input-vertical-slider', type: 'range', min: '0', max: '10', value: '5'}%>
+      <div class="satisfaction-div3"></div>
+    </div>
+
+    <div class="vertical-slider">
+      <%= f.input :value4, input_html: { class: 'input-vertical-slider', type: 'range', min: '0', max: '10', value: '5'}%>
+      <div class="satisfaction-div4"></div>
+    </div>
+
+    <div class="vertical-slider">
+      <%= f.input :value5, input_html: { class: 'input-vertical-slider', type: 'range', min: '0', max: '10', value: '5'}%>
+      <div class="satisfaction-div5"></div>
+    </div>
+      <%= f.submit 'Enregistrer' %>
+  </div>
+</section>
+
 <% end %>
