@@ -1,11 +1,7 @@
 <h1><%= @evaluation %></h1>
 
-<%= @evaluation.value1 %>
-<%= @evaluation.value2 %>
-<%= @evaluation.value3 %>
-<%= @evaluation.value4 %>
-<%= @evaluation.value5 %>
-<%= @evaluation.score %>
+
+
 
  <div class='chart-container'>
     <div class='total'>
@@ -13,7 +9,7 @@
         <div id="chartdiv"></div>
         <div id="charttotal"></div>
       </div>
-       <div id='affichage'>100</div>
+       <div id='affichage'><%= @evaluation.score %></div>
      </div>
    </div>
 
@@ -52,13 +48,13 @@
   charttot.hiddenState.properties.opacity = 0; // this creates initial fade-in
   charttot.innerRadius = am4core.percent(11);
 
-  var note1 = 5;
+  var note1 = 4;
   var note2 = 5;
   var note3 = 6;
   var note4 = 8;
   var note5 = 2;
 
-  var val1 = 70;
+  var val1 = 70 ;
   var val2 = 50;
   var val3 = 30;
   var val4 = 100;
