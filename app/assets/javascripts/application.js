@@ -159,6 +159,11 @@ function foo(){
     document.getElementById('textInput6').value=Math.round(finalResult);
 
 
+
+
+
+
+
 }
 
 
