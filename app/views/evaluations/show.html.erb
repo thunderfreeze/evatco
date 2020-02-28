@@ -1,35 +1,8 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @evaluation %></h1>
 
-
-<p>
-  <strong>Value1:</strong>
-  <%= @evaluation.value1 %>
-</p>
-
-<p>
-  <strong>Value2:</strong>
-  <%= @evaluation.value2 %>
-</p>
-
-<p>
-  <strong>Value3:</strong>
-  <%= @evaluation.value3 %>
-</p>
-
-<p>
-  <strong>Value4:</strong>
-  <%= @evaluation.value4 %>
-</p>
-
-<p>
-  <strong>Value5:</strong>
-  <%= @evaluation.value5 %>
-</p>
-
-<p>
-  <strong>Score:</strong>
-  <%= @evaluation.score = (@evaluation.value1+@evaluation.value2+@evaluation.value3+@evaluation.value4+@evaluation.value5)/2.0 %>
-</p>
-
-<%= link_to 'Edit', edit_evaluation_path(@evaluation) %> |
-<%= link_to 'Back', evaluations_path %>
+<%= @evaluation.value1 %>
+<%= @evaluation.value2 %>
+<%= @evaluation.value3 %>
+<%= @evaluation.value4 %>
+<%= @evaluation.value5 %>
+<%= @evaluation.score %>

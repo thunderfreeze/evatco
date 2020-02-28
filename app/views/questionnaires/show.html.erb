@@ -1,59 +1,31 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @questionnaire %></h1>
 
 <p>
-  <strong>User:</strong>
-  <%= @questionnaire.user %>
-</p>
-
-<p>
-  <strong>Question1:</strong>
   <%= @questionnaire.question1 %>
+  (<%= @questionnaire.importance1 %>)
 </p>
 
 <p>
-  <strong>Question2:</strong>
   <%= @questionnaire.question2 %>
+  (<%= @questionnaire.importance2 %>)
 </p>
 
 <p>
-  <strong>Question3:</strong>
   <%= @questionnaire.question3 %>
+  (<%= @questionnaire.importance3 %>)
+</p>
 </p>
 
 <p>
-  <strong>Question4:</strong>
   <%= @questionnaire.question4 %>
+  (<%= @questionnaire.importance4 %>)
 </p>
 
 <p>
-  <strong>Question5:</strong>
   <%= @questionnaire.question5 %>
+  (<%= @questionnaire.importance5 %>)
 </p>
 
-<p>
-  <strong>Importance1:</strong>
-  <%= @questionnaire.importance1 %>
-</p>
+<h2>Evaluations</h2>
 
-<p>
-  <strong>Importance2:</strong>
-  <%= @questionnaire.importance2 %>
-</p>
-
-<p>
-  <strong>Importance3:</strong>
-  <%= @questionnaire.importance3 %>
-</p>
-
-<p>
-  <strong>Importance4:</strong>
-  <%= @questionnaire.importance4 %>
-</p>
-
-<p>
-  <strong>Importance5:</strong>
-  <%= @questionnaire.importance5 %>
-</p>
-
-<%= link_to 'Edit', edit_questionnaire_path(@questionnaire) %> |
-<%= link_to 'Back', questionnaires_path %>
+<%= link_to 'Nouvelle evaluation', new_evaluation_path(questionnaire_id: @questionnaire.id) %>
