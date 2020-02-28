@@ -16,6 +16,7 @@ class EvaluationsController < ApplicationController
   # GET /evaluations/new
   def new
     @evaluation = Evaluation.new
+    @evaluation.questionnaire_id = params[:questionnaire_id]
   end
 
   # GET /evaluations/1/edit
