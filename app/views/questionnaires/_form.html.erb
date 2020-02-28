@@ -6,22 +6,51 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
 
+<section id="thirdContainer" class="third-container">
+  <div class="five-elements">
+    <h3>Etape 1: Mes 5 éléments</h3>
+    <p>les éléments de ma qualité de vie. Prenez quelques minutes. Définissez par une phrase dans les champs suivants</p>
+    <p> les 5 ELEMENTS essentiels pour vous pour "avoir une bonne et belle vie".</p>
+    <p>Vous n'êtes pas obligés d'en rentrer 5 (mais c'est mieux!), il n'y a pas de mauvaise réponse.</p>
+    <p class="important-text">Ce qui est important pour moi...</p>
 
-  <div class="form-inputs">
-    <div class="form-container">
-      <div class="question"><%= f.input :question1%></div>
-      <div class="importance"><%= f.input :importance1%></div>
-      <div class="question"><%= f.input :question2%></div>
-      <div class="importance"><%= f.input :importance2%></div>
-      <div class="question"><%= f.input :question3%></div>
-      <div class="importance"><%= f.input :importance3%></div>
-      <div class="question"><%= f.input :question4%></div>
-      <div class="importance"><%= f.input :importance4%></div>
-      <div class="question"><%= f.input :question5%></div>
-      <div class="importance"><%= f.input :importance5%></div>
+    <div class="five-element-container">
+      <div class="element">
+        <div class="colored-div1"></div>
+        <%= f.input :question1, input_html: { class: 'bien-etre', placeholder: 'Exemple Jaimerais garder une bonne santé'}%>
+        <%= f.input :importance1, input_html: { class: 'slider', type: 'range'}%>
+      </div>
+
+      <div class="element">
+        <div class="colored-div2"></div>
+        <%= f.input :question2, input_html: { class: 'bien-etre', placeholder: 'Exemple Jaimerais garder une bonne santé'}%>
+        <%= f.input :importance2, input_html: { class: 'slider', type: 'range'}%>
+      </div>
+
+      <div class="element">
+        <div class="colored-div3"></div>
+        <%= f.input :question3, input_html: { class: 'bien-etre', placeholder: 'Exemple Jaimerais garder une bonne santé'}%>
+        <%= f.input :importance3, input_html: { class: 'slider', type: 'range'}%>
+      </div>
+
+      <div class="element">
+        <div class="colored-div4"></div>
+        <%= f.input :question4, input_html: { class: 'bien-etre', placeholder: 'Exemple Jaimerais garder une bonne santé'}%>
+        <%= f.input :importance4, input_html: { class: 'slider', type: 'range'}%>
+      </div>
+
+      <div class="element">
+        <div class="colored-div5"></div>
+        <%= f.input :question5, input_html: { class: 'bien-etre', placeholder: 'Exemple Jaimerais garder une bonne santé'}%>
+        <%= f.input :importance5, input_html: { class: 'slider', type: 'range'}%>
+      </div>
+
+
+
+
     </div>
-  </div>
 
+  </div>
   <div class="form-actions">
     <%= f.button :submit, class: "btn-dark" %>
   </div>
