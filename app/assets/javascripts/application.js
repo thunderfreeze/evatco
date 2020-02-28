@@ -26,28 +26,28 @@ function oui(){
 
 
 function updateTextInput1(val1) {
-  // document.getElementById('textInput').value=val1;
+  document.getElementById('textInput').value=val1;
   foo();
 
 }
 
 function updateTextInput2(val2) {
-  // document.getElementById('textInput2').value=val2;
+  document.getElementById('textInput2').value=val2;
   foo();
 }
 
 function updateTextInput3(val3) {
-  // document.getElementById('textInput3').value=val3;
+  document.getElementById('textInput3').value=val3;
   foo();
 }
 
 function updateTextInput4(val4) {
-  // document.getElementById('textInput4').value=val4;
+  document.getElementById('textInput4').value=val4;
   foo();
 }
 
 function updateTextInput5(val5) {
-  // document.getElementById('textInput5').value=val5;
+  document.getElementById('textInput5').value=val5;
   foo();
 }
 
@@ -91,12 +91,12 @@ function updateslider5() {
 
 
 function foo(){
-  // valbase = 20;
-  // val1 = parseInt(document.getElementById('textInput').value);
-  //   val2 = parseInt(document.getElementById('textInput2').value);
-  //   val3 = parseInt(document.getElementById('textInput3').value);
-  //   val4 = parseInt(document.getElementById('textInput4').value);
-  //   val5 = parseInt(document.getElementById('textInput5').value);
+  valbase = 20;
+  val1 = parseInt(document.getElementById('textInput').value);
+    val2 = parseInt(document.getElementById('textInput2').value);
+    val3 = parseInt(document.getElementById('textInput3').value);
+    val4 = parseInt(document.getElementById('textInput4').value);
+    val5 = parseInt(document.getElementById('textInput5').value);
 
 
     var finalResult = val1 + val2 + val3 + val4 + val5;
@@ -114,13 +114,13 @@ function foo(){
     var test6 = finalResult / convertisseur;
 
 
-    // document.getElementById('newVal1').value=Math.round(test1);
-    // document.getElementById('newVal2').value=Math.round(test2);
-    // document.getElementById('newVal3').value=Math.round(test3);
-    // document.getElementById('newVal4').value=Math.round(test4);
-    // document.getElementById('newVal5').value=Math.round(test5);
-    // document.getElementById('newVal6').value=Math.round(test6);
-    // document.getElementById('textInput6').value=Math.round(finalResult);
+     document.getElementById('newVal1').value=Math.round(test1);
+     document.getElementById('newVal2').value=Math.round(test2);
+    document.getElementById('newVal3').value=Math.round(test3);
+     document.getElementById('newVal4').value=Math.round(test4);
+    document.getElementById('newVal5').value=Math.round(test5);
+     document.getElementById('newVal6').value=Math.round(test6);
+    document.getElementById('textInput6').value=Math.round(finalResult);
 
 
 }
