@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   get 'home/index'
   resources :questionnaires
 
-
   devise_for :users
   root 'home#index'
   

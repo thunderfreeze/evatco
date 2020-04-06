@@ -1,11 +1,13 @@
 class EvaluationsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_questionnaire
   before_action :set_evaluation, only: [:show, :edit, :update, :destroy]
 
   # GET /evaluations
   # GET /evaluations.json
   def index
     @evaluations = Evaluation.all
+    
   end
 
   # GET /evaluations/1
@@ -78,4 +80,6 @@ class EvaluationsController < ApplicationController
     def evaluation_params
       params.require(:evaluation).permit(:questionnaire_id, :value1, :value2, :value3, :value4, :value5, :score)
     end
+
+
 end
