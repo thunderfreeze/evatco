@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :evaluations
   get 'home/index'
   resources :questionnaires
+
+
   devise_for :users
   root 'home#index'
   

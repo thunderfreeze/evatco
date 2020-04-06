@@ -7,7 +7,7 @@
     <div class="vertical-slider">
       <input id="score1"></input>
       <%= f.input :value1, input_html: { id:'range1', class: 'input-vertical-slider', type: 'range', min: '0', max: '10', value: '5', onchange: 'rangeSlider1()'}%>
-      <div class="satisfaction-div1"></div>
+      <div class="satisfaction-div1"><%= @questionnaire.question1 %></div>
     </div>
 
     <div class="vertical-slider">
