@@ -21,7 +21,8 @@
         <%= f.input :question1, input_html: { class: 'bien-etre', placeholder: 'Exemple : Je souhaite garder une bonne santé'}%>
         <div class="range-slider">
           <span id="rs-bullet1" class="rs-label purple">1</span>
-          <input class="rs-range purple" id="rs-range-line1" type="range" value="1" name="rangeInput" min="1" max="100" onchange="updateTextInput2(this.value);">
+          <input class="rs-range purple" id="rs-range-line1" type="range" value="1" name="rangeInput" min="1" max="100" onchange="updateTextInput1(this.value);">
+          <input type="text" id="textInput" value="1" style="display: none;">
         </div>
         <%= f.input :importance1, input_html: { class: 'slider',id: 'newVal1', type: 'text', onchange: 'updateTextInput1(this.value)', style: 'display: none;'}%>
       </div>
@@ -31,7 +32,8 @@
         <%= f.input :question2, input_html: { class: 'bien-etre', placeholder: 'Exemple 2 : Je souhaite voir mes amis'}%>
         <div class="range-slider">
           <span id="rs-bullet2" class="rs-label pink">1</span>
-         <input class="rs-range pink" id="rs-range-line2" type="range" value="1" name="rangeInput" min="1" max="100" onchange="updateTextInput2(this.value);">
+          <input class="rs-range pink" id="rs-range-line2" type="range" value="1" name="rangeInput" min="1" max="100" onchange="updateTextInput2(this.value);">
+          <input type="text" id="textInput2" value="1" style="display: none;">
         </div>
         <%= f.input :importance2, input_html: { class: 'slider',id: 'newVal2', type: 'text', onchange: 'updateTextInput2(this.value)', style: 'display: none;'}%>
       </div>
@@ -42,6 +44,7 @@
         <div class="range-slider">
           <span id="rs-bullet3" class="rs-label yellow">1</span>
           <input class="rs-range yellow" id="rs-range-line3" type="range" value="1" name="rangeInput" min="1" max="100" onchange="updateTextInput3(this.value);">
+          <input type="text" id="textInput3" value="1" style="display: none;">
         </div>
         <%= f.input :importance3, input_html: { class: 'slider',id: 'newVal3', type: 'text', onchange: 'updateTextInput3(this.value)', style: 'display: none;'}%>
       </div>
@@ -52,6 +55,7 @@
         <div class="range-slider">
           <span id="rs-bullet4" class="rs-label dark-green">1</span>
           <input class="rs-range dark-green" id="rs-range-line4" type="range" value="1" name="rangeInput" min="1" max="100" onchange="updateTextInput4(this.value);">
+          <input type="text" id="textInput4" value="1" style="display: none;">
         </div>
         <%= f.input :importance4, input_html: { class: 'slider',id: 'newVal4', type: 'text', onchange: 'updateTextInput4(this.value)', style: 'display: none;'}%>
       </div>
@@ -62,6 +66,7 @@
         <div class="range-slider">
           <span id="rs-bullet5" class="rs-label light-green">1</span>
           <input class="rs-range light-green" id="rs-range-line5" class="" type="range" value="1" name="rangeInput" min="1" max="100" onchange="updateTextInput5(this.value);">
+          <input type="text" id="textInput5" value="1" style="display: none;">
         </div>
         <%= f.input :importance5, input_html: { class: 'slider',id: 'newVal5', type: 'text', onchange: 'updateTextInput5(this.value)', style: 'display: none;'}%>
       </div>
