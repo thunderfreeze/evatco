@@ -513,13 +513,13 @@ h3{
   flex-direction: column;
   justify-content: space-between;
   margin-left: 8%;
-  height: 40vh;
 }
 
 .element{
   display: flex;
   justify-content: space-between;
   width: 80%;
+  margin-top: 5vh;
 }
 
 .form-group.text.required.questionnaire_question1, .form-group.text.required.questionnaire_question2, .form-group.text.required.questionnaire_question3, .form-group.text.required.questionnaire_question4, .form-group.text.required.questionnaire_question5{
@@ -902,10 +902,10 @@ label.required{
 
 .next-step{
   background-color: #000!important;
+  margin-top: 5vh;
   color: #FFFFFF!important;
-  position: absolute;
+
   padding: 15px!important;
-  bottom: 30px;
-  right: 150px;
+
   font-size: 15px!important;
 }
