@@ -19,42 +19,54 @@
       <div class="element">
         <div class="colored-div1"></div>
         <%= f.input :question1, input_html: { class: 'bien-etre', placeholder: 'Exemple : Je souhaite garder une bonne santé'}%>
-        <input type="range" value="20" name="rangeInput" min="1" max="100" onchange="updateTextInput1(this.value);">
-        <input type="text" id="textInput" value="20">
+        <div class="range-slider">
+          <span id="rs-bullet1" class="rs-label purple">1</span>
+          <input class="rs-range purple" id="rs-range-line1" type="range" value="1" name="rangeInput" min="1" max="100" onchange="updateTextInput2(this.value);">
+        </div>
         <%= f.input :importance1, input_html: { class: 'slider',id: 'newVal1', type: 'text', onchange: 'updateTextInput1(this.value)', style: 'display: none;'}%>
       </div>
 
       <div class="element">
         <div class="colored-div2"></div>
         <%= f.input :question2, input_html: { class: 'bien-etre', placeholder: 'Exemple 2 : Je souhaite voir mes amis'}%>
-       <input type="range" value="20" name="rangeInput" min="1" max="100" onchange="updateTextInput2(this.value);">
-        <input type="text" id="textInput2" value="20">
+        <div class="range-slider">
+          <span id="rs-bullet2" class="rs-label pink">1</span>
+         <input class="rs-range pink" id="rs-range-line2" type="range" value="1" name="rangeInput" min="1" max="100" onchange="updateTextInput2(this.value);">
+        </div>
         <%= f.input :importance2, input_html: { class: 'slider',id: 'newVal2', type: 'text', onchange: 'updateTextInput2(this.value)', style: 'display: none;'}%>
       </div>
 
       <div class="element">
         <div class="colored-div3"></div>
         <%= f.input :question3, input_html: { class: 'bien-etre', placeholder: 'Exemple 3 : Je veux avoir du temps pour ma famille'}%>
-        <input type="range" value="20" name="rangeInput" min="1" max="100" onchange="updateTextInput3(this.value);">
-        <input type="text" id="textInput3" value="20">
+        <div class="range-slider">
+          <span id="rs-bullet3" class="rs-label yellow">1</span>
+          <input class="rs-range yellow" id="rs-range-line3" type="range" value="1" name="rangeInput" min="1" max="100" onchange="updateTextInput3(this.value);">
+        </div>
         <%= f.input :importance3, input_html: { class: 'slider',id: 'newVal3', type: 'text', onchange: 'updateTextInput3(this.value)', style: 'display: none;'}%>
       </div>
 
       <div class="element">
         <div class="colored-div4"></div>
         <%= f.input :question4, input_html: { class: 'bien-etre', placeholder: 'Exemple 4 : Je veux vivre dans des conditions financières stables'}%>
-        <input type="range" value="20" name="rangeInput" min="1" max="100" onchange="updateTextInput4(this.value);">
-        <input type="text" id="textInput4" value="20">
+        <div class="range-slider">
+          <span id="rs-bullet4" class="rs-label dark-green">1</span>
+          <input class="rs-range dark-green" id="rs-range-line4" type="range" value="1" name="rangeInput" min="1" max="100" onchange="updateTextInput4(this.value);">
+        </div>
         <%= f.input :importance4, input_html: { class: 'slider',id: 'newVal4', type: 'text', onchange: 'updateTextInput4(this.value)', style: 'display: none;'}%>
       </div>
 
       <div class="element">
         <div class="colored-div5"></div>
         <%= f.input :question5, input_html: { class: 'bien-etre', placeholder: 'Exemple 5 : Je souhaite vivre de ma passion...'}%>
-        <input type="range" value="20" name="rangeInput" min="1" max="100" onchange="updateTextInput5(this.value);">
-        <input type="text" id="textInput5" value="20">
+        <div class="range-slider">
+          <span id="rs-bullet5" class="rs-label light-green">1</span>
+          <input class="rs-range light-green" id="rs-range-line5" class="" type="range" value="1" name="rangeInput" min="1" max="100" onchange="updateTextInput5(this.value);">
+        </div>
         <%= f.input :importance5, input_html: { class: 'slider',id: 'newVal5', type: 'text', onchange: 'updateTextInput5(this.value)', style: 'display: none;'}%>
       </div>
+
+
 
 
 
@@ -63,8 +75,62 @@
 
   </div>
 
+  <script type="text/javascript">
+    var rangeSliderTest1 = document.getElementById("rs-range-line1");
+    var rangeBulletTest1 = document.getElementById("rs-bullet1");
+    rangeSliderTest1.addEventListener("input", showSliderValue1, false);
+
+    function showSliderValue1() {
+      rangeBulletTest1.innerHTML = rangeSliderTest1.value;
+      var bulletPosition1 = (rangeSliderTest1.value /rangeSliderTest1.max);
+      rangeBulletTest1.style.left = (bulletPosition1 * 92.1) + "%";
+    }
+
+    var rangeSliderTest2 = document.getElementById("rs-range-line2");
+    var rangeBulletTest2 = document.getElementById("rs-bullet2");
+    rangeSliderTest2.addEventListener("input", showSliderValue2, false);
+
+    function showSliderValue2() {
+      rangeBulletTest2.innerHTML = rangeSliderTest2.value;
+      var bulletPosition2 = (rangeSliderTest2.value /rangeSliderTest2.max);
+      rangeBulletTest2.style.left = (bulletPosition2 * 92.1) + "%";
+    }
+
+    var rangeSliderTest3 = document.getElementById("rs-range-line3");
+    var rangeBulletTest3 = document.getElementById("rs-bullet3");
+    rangeSliderTest3.addEventListener("input", showSliderValue3, false);
+
+    function showSliderValue3() {
+      rangeBulletTest3.innerHTML = rangeSliderTest3.value;
+      var bulletPosition3 = (rangeSliderTest3.value /rangeSliderTest3.max);
+      rangeBulletTest3.style.left = (bulletPosition3 * 92.1) + "%";
+    }
+
+    var rangeSliderTest4 = document.getElementById("rs-range-line4");
+    var rangeBulletTest4 = document.getElementById("rs-bullet4");
+    rangeSliderTest4.addEventListener("input", showSliderValue4, false);
+
+    function showSliderValue4() {
+      rangeBulletTest4.innerHTML = rangeSliderTest4.value;
+      var bulletPosition4 = (rangeSliderTest4.value /rangeSliderTest4.max);
+      rangeBulletTest4.style.left = (bulletPosition4 * 92.1) + "%";
+    }
+
+    var rangeSliderTest5 = document.getElementById("rs-range-line5");
+    var rangeBulletTest5 = document.getElementById("rs-bullet5");
+    rangeSliderTest5.addEventListener("input", showSliderValue5, false);
+
+    function showSliderValue5() {
+      rangeBulletTest5.innerHTML = rangeSliderTest5.value;
+      var bulletPosition5 = (rangeSliderTest5.value /rangeSliderTest5.max);
+      rangeBulletTest5.style.left = (bulletPosition5 * 92.1) + "%";
+    }
+  </script>
+
+
 
   <div class="form-actions">
     <%= f.button :submit, class: "element-btn btn-outline-success" %>
   </div>
+</section>
 <% end %>

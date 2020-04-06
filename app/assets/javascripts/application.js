@@ -15,6 +15,10 @@
 //= require turbolinks
 //= require_tree .
 
+
+
+
+
 function rangeSlider1(){
   var range1 = document.querySelector('#range1').value;
   console.log(range1);
@@ -165,6 +169,7 @@ function foo(){
 
 
 }
+
 
 
 
