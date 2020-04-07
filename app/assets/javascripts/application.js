@@ -5,3 +5,4 @@
 //= require activestorage
 //= require amcharts
 //= require_tree ./application
+
