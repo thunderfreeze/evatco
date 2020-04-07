@@ -13,7 +13,12 @@
   </head>
 
   <body>
-    <%= image_tag "logo.png", alt: "Mon image", class: "logo" %>
+
+    <%= link_to home_index_path do %>
+       <%= image_tag "logo.png", class: "logo" %>
+    <% end %>
+
+
 
     <div onclick="oui()" class="icon">
       <div class="hamburger"></div>
@@ -25,6 +30,8 @@
       <%= link_to 'Evaluation', evaluations_path, class: "menu-link" %>
       <%= link_to 'New Evaluation', new_evaluation_path, class: "menu-link" %>
     </section>
+
+
 
 
   <p>

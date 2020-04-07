@@ -500,6 +500,14 @@ textarea{
   margin-top: 10vh;
 }
 
+
+.vertical-slider-wrapper{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 h3{
   font-size: 3rem !important;
   font-family: "Cabin", Bold;
@@ -693,9 +701,7 @@ input.slider::slider-thumb{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 84%;
-  margin-top: 10vh;
-
+  width: 74%;
 }
 
 
@@ -903,7 +909,7 @@ label.required{
 
 
 .range-slider-vertical {
-  margin-top: 30vh;
+  margin-top: 15vh;
   transform: rotate(-90deg)
 }
 
@@ -937,24 +943,22 @@ label.required{
 .rs-range-vertical::-webkit-slider-thumb {
   box-shadow: none;
   border: 0px solid #ffffff;
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
   height: 33px;
   width: 33px;
   border-radius: 22px;
   cursor: pointer;
   -webkit-appearance: none;
-  margin-top: -17px;
+  margin-top: -16.8px;
 }
 .rs-range-vertical::-moz-range-thumb {
   box-shadow: none;
   border: 0px solid #ffffff;
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
   height: 33px;
   width: 33px;
   border-radius: 22px;
   cursor: pointer;
   -webkit-appearance: none;
-  margin-top: -20px;
+  margin-top: -16.8px;
 }
 .rs-range-vertical::-moz-focus-outer {
   border: 0;
