@@ -1,6 +1,5 @@
 class EvaluationsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_questionnaire
   before_action :set_evaluation, only: [:show, :edit, :update, :destroy]
 
   # GET /evaluations
@@ -17,6 +16,7 @@ class EvaluationsController < ApplicationController
 
   # GET /evaluations/new
   def new
+    @questionnaire = Questionnaire.find(params[:questionnaire_id])
     @evaluation = Evaluation.new
     @evaluation.questionnaire_id = params[:questionnaire_id]
   end
@@ -81,9 +81,6 @@ class EvaluationsController < ApplicationController
       params.require(:evaluation).permit(:questionnaire_id, :value1, :value2, :value3, :value4, :value5, :score)
     end
 
-    def set_questionnaire
-      @questionnaire = Questionnaire.find(params[:questionnaire_id])
-    end
 
 
 end
