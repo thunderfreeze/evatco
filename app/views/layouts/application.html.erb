@@ -4,55 +4,55 @@
     <title>Qualiviscope</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <link href="https://fonts.googleapis.com/css?family=Cabin:400,400i,500,500i,600,600i,700,700i&display=swap" rel="stylesheet">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
   </head>
-
   <body>
+    <nav class="navbar navbar-light bg-transparent">
+      <%= link_to root_path, class: 'navbar-brand' do %>
+         <%= image_tag "logo.png", class: 'img-fluid' %>
+      <% end %>
 
-    <%= link_to home_index_path do %>
-       <%= image_tag "logo.png", class: "logo" %>
-    <% end %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
+      <div class="collapse navbar-collapse" id="navbar">
+        <% if user_signed_in? %>
+          <p>Bonjour <%= current_user.email %></p>
+          <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+          <%= link_to 'Editer mon profil', edit_user_registration_path, class: "btn btn-primary" %>
+        <% end %>
 
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown09">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-md-0">
+          <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+        </form>
+      </div>
+    </nav>
 
-    <div onclick="oui()" class="icon">
-      <div class="hamburger"></div>
-    </div>
-    <section class="menu-container">
-      <%= link_to 'Accueil', home_index_path, class: "menu-link" %>
-      <%= link_to 'New questionnaire', new_questionnaire_path, class: "menu-link" %>
-      <%= link_to 'Questionnaire', questionnaires_path, class: "menu-link" %>
-      <%= link_to 'Evaluation', evaluations_path, class: "menu-link" %>
-      <%= link_to 'New Evaluation', new_evaluation_path, class: "menu-link" %>
-    </section>
+    <main class="container-fluid">
+      <%= yield %>
+    </main>
 
-
-
-
-  <p>
-    <% if user_signed_in? %>
-      <p>Bonjour <%= current_user.email %></p>
-
-
-
-
-      <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
-      <%= link_to 'Editer mon profil', edit_user_registration_path, class: "btn btn-primary" %>
-
-    <% else %>
-
-
-    <% end %>
-  </p>
-  <section class="body-container">
-    <%= yield %>
-  </section>
-
-
+    <%= render 'footer' %>
   </body>
 </html>

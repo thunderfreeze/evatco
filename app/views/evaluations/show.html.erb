@@ -13,6 +13,9 @@
     </div>
 </div>
 
+<%
+# https://github.com/dvandersluis/amcharts.rb
+%>
 
 <script src="https://www.amcharts.com/lib/4/core.js"></script>
 <script src="https://www.amcharts.com/lib/4/charts.js"></script>
@@ -20,20 +23,7 @@
 <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
 
 <script type="text/javascript">
-  /**
-   * ---------------------------------------
-   * This demo was created using amCharts 4.
-   *
-   * For more information visit:
-   * https://www.amcharts.com/
-   *
-   * Documentation is available at:
-   * https://www.amcharts.com/docs/v4/
-   * ---------------------------------------
-   */
-
-
-
+$(function() {
   // Themes begin
   am4core.useTheme(am4themes_material);
   am4core.useTheme(am4themes_animated);
@@ -163,26 +153,10 @@
 
   //chart.legend = new am4charts.Legend();
 
+});
 </script>
 
 <style type="text/css">
-  h1{
-  text-align: center;
-  font-family: 'Montserrat';
-  font-size: 3rem;
-  margin-bottom: 40vh;
-}
-
-
-
-body {
-  text-align: center;
-}
-
-.container {
-  display : flex;
-  flex-direction: column;
-}
 
 .total {
   display:flex;
@@ -204,8 +178,6 @@ body {
   width: 100vh;
   height: 500px;
   component-align:center;
-  font-family: 'Montserrat';
-  font-size: 1.3rem;
   z-index:100;
 }
 
@@ -214,20 +186,12 @@ body {
   width: 100vh;
   height: 700px;
   component-align:center;
-  font-family: 'Montserrat';
   font-size: 1.3rem;
 }
 
 #affichage {
   text-align:center;
-  font-family: 'Montserrat';
   font-size: 2rem;
   font-weight: bold;
 }
-
-
-
-}
-
-
 </style>

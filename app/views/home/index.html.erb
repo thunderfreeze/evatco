@@ -1,198 +1,37 @@
+<div class="jumbotron bg-transparent text-center rounded-0 mb-5">
+  <h1>Mesurez votre qualité de vie</h1>
+  <p class="lead">
+    Vous souhaitez mesurer votre qualité de vie ?<br>
+    ATEV vous propose de faire le test en quelques minutes grâce au Qualiviscope.
+  </p>
+  <%= link_to 'Démarrer', '#secondContainer', class: 'btn btn-lg btn-primary' %>
+</div>
 
-
-<section class="first-container">
-  <div class="welcome-container">
-    <div class="welcome-container-text">
-      <h1 class="title">Mesurez votre qualité de vie</h1>
-      <p class="intro">Vous souhaitez mesurer votre qualité de vie ? ATEV vous propose de</p>
-      <p class="intro"> faire le test en quelques minutes grâce au Qualiviscope</p>
+<div id="secondContainer" class="second-container">
+  <h2 class="mb-4">Comment ça marche ?</h2>
+  <div class="row">
+    <div class="col-md-3">
+      <%= image_tag "etape1.png", alt: "Etape 1", class: "img-fluid mb-4" %>
+      <h4>Etape 1: Mes 5 éléments</h4>
+      <p>Définissez les 5 element essentiels pour votre bonheur</p>
     </div>
-    <a href="#secondContainer" class="btn-continuer">Démarrer</a>
-  </div>
-</section>
-
-<section id="secondContainer" class="second-container">
-  <h2>Comment ça marche ?</h2>
-  <div class="img-container">
-    <div class="img-text-etape">
-      <%= image_tag "etape1.png", alt: "Mon image", class: "img-etape" %>
-      <p class="etape">
-        Etapes 1: Mes 5 éléments
-      </p>
-      <p class="etape-description">Définissez les 5 element essentiels pour votre bonheur</p>
+    <div class="col-md-3">
+      <%= image_tag "etape2.png", alt: "Etape 2", class: "img-fluid mb-4" %>
+      <h4>Etape 2: L'importance des éléments</h4>
+      <p>Evaluez comment ces éléments influencent votre vie</p>
     </div>
-
-    <div class="img-text-etape">
-      <%= image_tag "etape2.png", alt: "Mon image", class: "img-etape" %>
-      <p class="etape">
-        Etapes 2: L'importance des éléments
-      </p>
-      <p class="etape-description">Evaluez comment ces éléments influencent votre vie</p>
+    <div class="col-md-3">
+      <%= image_tag "etape3.png", alt: "Etape 3", class: "img-fluid mb-4" %>
+      <h4>Etape 3: Mon niveau de satisfaction</h4>
+      <p>Notez l'état de ces éléments dans votre vie actuelle</p>
     </div>
-
-    <div class="img-text-etape">
-      <%= image_tag "etape3.png", alt: "Mon image", class: "img-etape" %>
-      <p class="etape">
-        Etapes 3: Mon niveau de satisfaction
-      </p>
-      <p class="etape-description">Notez l'état de ces éléments dans votre vie actuelle</p>
-    </div>
-
-    <div class="img-text-etape">
-      <%= image_tag "etape4.png", alt: "Mon image", class: "img-etape" %>
-      <p class="etape">
-        Etapes 4: Mon score qualité de vie
-      </p>
-    </div>
-
-    <div class="img-etape-text">
+    <div class="col-md-3">
+      <%= image_tag "etape4.png", alt: "Etape 4", class: "img-fluid mb-4" %>
+      <h4>Etapes 4: Mon score qualité de vie</h4>
       <p>Voila grâce aux étapes précédentes vous obtenez votre Qualiviscore: votre score de qualité sur 100 !</p>
     </div>
-
-    <div class="etape-btn">
-      <a href="/questionnaires/new">J'ai compris</a>
-    </div>
   </div>
-</section>
-
-
-
-
-
-
-<script src="https://www.amcharts.com/lib/4/core.js"></script>
-<script src="https://www.amcharts.com/lib/4/charts.js"></script>
-<script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
-<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-<script type="text/javascript">
-  // Themes begin
-  am4core.useTheme(am4themes_material);
-  am4core.useTheme(am4themes_animated);
-  // Themes end
-
-  // Create chart
-  var chart = am4core.create("chartdiv", am4charts.PieChart);
-  chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
-  chart.innerRadius = am4core.percent(15);
-  var charttot = am4core.create("charttotal", am4charts.PieChart);
-  charttot.hiddenState.properties.opacity = 0; // this creates initial fade-in
-  charttot.innerRadius = am4core.percent(11);
-
-  var note1 = 20;
-  var note2 = 50;
-  var note3 = 60;
-  var note4 = 80;
-  var note5 = 20;
-
-  var val1 = 70;
-  var val2 = 50;
-  var val3 = 30;
-  var val4 = 100;
-  var val5 = 40;
-
-  chart.data = [
-
-    {
-      choice: "Choix 1",
-      part: val1,
-      note: note1,
-      "color": am4core.color('#ED6B80')
-    },
-    {
-      choice: "Choix 2",
-      part: val2,
-      note: note2,
-      "color": am4core.color('#CAD639')
-    },
-    {
-      choice: "Choix 3",
-      part: val3,
-      note: note3,
-      "color": am4core.color('#384B9B')
-    },
-    {
-      choice: "Choix 4",
-      part: val4,
-      note: note4,
-      "color": am4core.color('#81B3A3')
-    },
-    {
-      choice: "Choix 5",
-      part: val5,
-      note: note5,
-      "color": am4core.color('#F8CF62')
-    }
-
-  ];
-
-  charttot.data = [
-
-    {
-      choice: "Choix 1",
-      part: val1,
-      note: 1,
-      "color": am4core.color('#ED6B80')
-    },
-    {
-      choice: "Choix 2",
-      part: val2,
-      note: 1,
-      "color": am4core.color('#CAD639')
-    },
-    {
-      choice: "Choix 3",
-      part: val3,
-      note: 1,
-      "color": am4core.color('#384B9B')
-    },
-    {
-      choice: "Choix 4",
-      part: val4,
-      note: 1,
-      "color": am4core.color('#81B3A3')
-    },
-    {
-      choice: "Choix 5",
-      part: val5,
-      note: 1,
-      "color": am4core.color('#F8CF62')
-    },
-
-  ];
-
-
-  var series = chart.series.push(new am4charts.PieSeries());
-  series.dataFields.value = "part";
-  series.dataFields.radiusValue = "note";
-  series.dataFields.category = "choice";
-  series.slices.template.propertyFields.fill = "color";
-  series.colors.step = 3;
-  series.labels.template.disabled = true;
-  series.ticks.template.disabled = true;
-  series.hiddenState.properties.endAngle = -90;
-
-
-  series.slices.template.tooltipText = "";
-
-
-  var seriestot = charttot.series.push(new am4charts.PieSeries());
-  seriestot.dataFields.value = "part";
-  seriestot.dataFields.radiusValue = "note";
-  seriestot.dataFields.category = "choice";
-  seriestot.slices.template.propertyFields.fill = "color";
-  seriestot.colors.step = 3;
-  seriestot.labels.template.disabled = true;
-  seriestot.ticks.template.disabled = true;
-  seriestot.hiddenState.properties.endAngle = -90;
-  // Put a thick white border around each Slice
-  //seriestot.slices.template.stroke = am4core.color("#000");
-  //seriestot.slices.template.strokeWidth = 2;
-  //seriestot.slices.template.strokeOpacity = 1;
-
-  seriestot.slices.template.fillOpacity = 0.2;
-
-  //chart.legend = new am4charts.Legend();
-
-</script>
-
-
+  <p class="text-center">
+    <%= link_to 'J\'ai compris, je m\'inscris !', new_questionnaire_path, class: 'btn btn-primary' %>
+  </p>
+</div>

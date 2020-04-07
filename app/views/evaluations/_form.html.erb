@@ -2,13 +2,26 @@
 
   <section id="fourthContainer" class="third-container">
     <div class="five-elements">
-      <h3>Etape 3 : Mon niveau de satisfaction.</h3>
+      <h1>Etape 3 : Mon niveau de satisfaction.</h1>
       <p>Grâce aux échelles ci dessous, notez votre niveau de satisfaction en ce moment pour chaque besoin. ​10 correspond</p>
       <p>à “Très bien”, 5 à “Ni bien ni mal” et 0 à “Ça ne va pas du tout”.</p>
       <p>Par exemple : En ce moment je vois ma famille régulièrement donc je mets 10. Au contraire si en ce moment je n’ai pas le temps de la</p>
       <p> voir je peux mettre 4.</p>
 
     <%= f.association :questionnaire, as: :hidden %>
+
+    <div class="row">
+      <div class="col-md-2">
+        <div class="range-slider-vertical">
+          <span id="rs-bullet1" class="rs-label-vertical purple">0</span>
+          <%= f.input :value1, input_html: { id:'rs-range-line1', class: 'rs-range-vertical purple', type: 'range', min: '0', max: '10', value: '0', onchange: 'rangeSlider1()'}%>
+        </div>
+        <div class="question1 text-white text-center p-2">
+          <%= @evaluation.questionnaire.question1 %>
+        </div>
+      </div>
+    </div>
+
     <div class="vertical-slider-wrapper">
       <div class="vertical-slider-container">
         <div>
@@ -17,7 +30,7 @@
             <%= f.input :value1, input_html: { id:'rs-range-line1', class: 'rs-range-vertical purple', type: 'range', min: '0', max: '10', value: '0', onchange: 'rangeSlider1()'}%>
           </div>
           <div class="satisfaction-div1 satisfaction-div">
-            <p><%= @questionnaire.question1 %></p>
+            <p><%= @evaluation.questionnaire.question1 %></p>
           </div>
         </div>
 
@@ -27,7 +40,7 @@
             <%= f.input :value2, input_html: { id:'rs-range-line2', class: 'rs-range-vertical pink', type: 'range', min: '0', max: '10', value: '0', onchange: 'rangeSlider2()'}%>
           </div>
           <div class="satisfaction-div2 satisfaction-div">
-            <p><%= @questionnaire.question2 %></p>
+            <p><%= @evaluation.questionnaire.question2 %></p>
           </div>
         </div>
 
@@ -37,7 +50,7 @@
             <%= f.input :value3, input_html: { id:'rs-range-line3', class: 'rs-range-vertical yellow', type: 'range', min: '0', max: '10', value: '0', onchange: 'rangeSlider3()'}%>
           </div>
           <div class="satisfaction-div3 satisfaction-div">
-            <p><%= @questionnaire.question3 %></p>
+            <p><%= @evaluation.questionnaire.question3 %></p>
           </div>
         </div>
 
@@ -47,7 +60,7 @@
             <%= f.input :value4, input_html: { id:'rs-range-line4', class: 'rs-range-vertical dark-green', type: 'range', min: '0', max: '10', value: '0', onchange: 'rangeSlider4()'}%>
           </div>
           <div class="satisfaction-div4 satisfaction-div">
-            <p><%= @questionnaire.question4 %></p>
+            <p><%= @evaluation.questionnaire.question4 %></p>
           </div>
         </div>
 
@@ -57,7 +70,7 @@
             <%= f.input :value5, input_html: { id:'rs-range-line5', class: 'rs-range-vertical light-green', type: 'range', min: '0', max: '10', value: '0', onchange: 'rangeSlider5()'}%>
           </div>
           <div class="satisfaction-div5 satisfaction-div">
-            <p><%= @questionnaire.question5 %></p>
+            <p><%= @evaluation.questionnaire.question5 %></p>
           </div>
         </div>
 
@@ -125,4 +138,3 @@
 </script>
 
 <% end %>
-

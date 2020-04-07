@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Qualiviscope</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-transparent">
+      <%= link_to home_index_path, class: 'navbar-brand' do %>
+         <%= image_tag "logo.png", class: 'img-fluid' %>
+      <% end %>
+    </nav>
+    <main class="container">
+      <div class="row mt-5 mb-5">
+        <div class="col-md-6 offset-md-3">
+          <%= yield %>
+        </div>
+      </div>
+    </main>
+    <%= render 'footer' %>
+  </body>
+</html>

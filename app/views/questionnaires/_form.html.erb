@@ -5,7 +5,7 @@
 
 <section id="thirdContainer" class="third-container">
   <div class="five-elements">
-    <h3>Etape 1 : Mes 5 éléments</h3>
+    <h1>Etape 1 : Mes 5 éléments</h1>
     <p>Les éléments de ma qualité de vie. Prenez quelques minutes. Définissez par une phrase dans les champs suivants :</p>
     <p>Les 5 <strong>éléments</strong> essentiels pour vous afin d'avoir "une bonne et belle vie".</p>
     <p>Les 5 <strong>notes</strong> attribuées à ces champs correspondantes à une importance sur 100.</p>
@@ -13,19 +13,28 @@
     <p class="important-text">Voici ce qui est important pour moi...</p>
 
     <div class="five-element-container">
-      <div class="element">
-        <div class="colored-div1"></div>
-        <%= f.input :question1, input_html: { class: 'bien-etre', placeholder: 'Exemple : Je souhaite garder une bonne santé'}%>
-        <div class="range-slider">
-          <span id="rs-bullet1" class="rs-label purple">1</span>
-          <input class="rs-range purple" id="rs-range-line1" type="range" value="1" name="rangeInput" min="1" max="100" onchange="updateTextInput1(this.value);">
-          <input type="text" id="textInput" value="1" style="display: none;">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="colored-div colored-div--purple"></div>
         </div>
-        <%= f.input :importance1, input_html: { class: 'slider',id: 'newVal1', type: 'text', onchange: 'updateTextInput1(this.value)', style: 'display: none;'}%>
+        <div class="col-md-4">
+          <%= f.input :question1,
+                      label: false,
+                      input_html: { class: 'bien-etre', placeholder: 'Exemple : Je souhaite garder une bonne santé'}
+                      %>
+        </div>
+        <div class="col-md-6">
+          <div class="range-slider">
+            <span id="rs-bullet1" class="rs-label purple">1</span>
+            <input class="rs-range purple" id="rs-range-line1" type="range" value="1" name="rangeInput" min="1" max="100" onchange="updateTextInput1(this.value);">
+            <input type="text" id="textInput" value="1" style="display: none;">
+          </div>
+          <%= f.input :importance1, input_html: { class: 'slider',id: 'newVal1', type: 'text', onchange: 'updateTextInput1(this.value)', style: 'display: none;'}%>
+        </div>
       </div>
 
       <div class="element">
-        <div class="colored-div2"></div>
+        <div class="colored-div colored-div--pink"></div>
         <%= f.input :question2, input_html: { class: 'bien-etre', placeholder: 'Exemple 2 : Je souhaite voir mes amis'}%>
         <div class="range-slider">
           <span id="rs-bullet2" class="rs-label pink">1</span>
@@ -72,7 +81,7 @@
 
   </div>
   <div class="form-actions">
-    <%= f.button :submit, class: "next-step" %>
+    <%= f.button :submit, class: "btn btn-primary" %>
   </div>
 </section>
 

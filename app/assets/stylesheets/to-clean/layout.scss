@@ -1,0 +1,739 @@
+
+/*les couleurs*/
+/*FCE1DD bege*/
+/*ED6B80 rose*/
+/*F8CF62 orange*/
+/*CAD639 vert jaune*/
+/*81B3A3 vert bleu*/
+/*384B9B bleu*/
+
+
+
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+a{
+  text-decoration: none;
+}
+
+h2{
+  font-size: 5rem !important;
+  width: 84%;
+  margin-top: 10vh !important;
+  margin-bottom: 10vh !important;
+  text-align: left;
+  font-family: 'Cabin', semi-bold;
+}
+
+.body-container{
+  width: 100%;
+  margin-top: 15vh;
+}
+
+.logo{
+  position: absolute;
+  top: 7%;
+  left: 5%;
+  height: 50px;
+  z-index: 50;
+}
+
+
+/*FIRST CONTAINER STYLE*/
+
+.first-container{
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(asset-path("background.svg"));
+  background-size: cover;
+}
+
+.welcome-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 70%;
+  margin-top: 20vh;
+}
+
+.title{
+  color: #000;
+  font-size: 7.9rem;
+  font-family: 'Cabin', semi-bold;
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.intro{
+  font-size: 2rem;
+  text-align: center;
+  font-family: 'Cabin', regular;
+  color: #000;
+}
+
+.btn-continuer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFF;
+  background-color: #000;
+  border: none;
+  font-size: 2rem;
+  padding: 15px;
+  width: 20%;
+  border-radius: 30px;
+  font-family: 'Cabin', bold;
+  margin-top: 5vh;
+}
+
+.btn-continuer:hover{
+  color: grey;
+  text-decoration: none;
+}
+
+.icon{
+  position: fixed;
+  z-index: 99;
+  cursor: pointer;
+  top: 7%;
+  right: 5%;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+}
+
+.hamburger{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  height: 3px;
+  width: 70px;
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.hamburger:before{
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 15px;
+  height: 3px;
+  width: 70px;
+  background-color: rgba(0, 0, 0, 1);
+  transition: .2s;
+}
+
+.hamburger:after{
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -15px;
+  height: 3px;
+  width: 70px;
+  background-color: rgba(0, 0, 0, 1);
+  transition: .2s;
+}
+
+.icon.active .hamburger{
+  background-color: rgba(0, 0, 0, 0);
+  transition: .2s;
+}
+
+.icon.active .hamburger:before{
+  top: 0;
+  left: 0;
+  transform: rotate(45deg);
+  transition: .2s;
+}
+
+
+.icon.active .hamburger:after{
+  top: 0;
+  left: 0;
+  transform: rotate(135deg);
+  transition: .2s;
+}
+
+.menu-container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  z-index: 80;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(255, 255, 255, .5);
+  transform: translateX(-100vw);
+  transition: .3s;
+}
+
+.menu-container.active{
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 1);
+  transform: translateX(0);
+  transition: .3s;
+}
+
+.menu-link{
+  color: #000;
+  position: relative;
+  font-size: 4rem;
+  font-family: 'Cabin', semi-bold;
+
+}
+
+.menu-link:hover{
+  text-decoration: none;
+  color: #000;
+}
+
+.menu-link:after{
+  content: '';
+  height: 4px;
+  width: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  transition: .2s;
+}
+
+.menu-link:hover:after{
+  width: 100%;
+  transition: .2s;
+}
+
+
+.transition{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.transition div:nth-child(1){
+  width: 100%;
+  height: 33.3%;
+  background-color: #ed6b80;
+}
+
+.transition div:nth-child(2){
+  width: 100%;
+  height: 33.3%;
+  background-color: #384b9b;
+}
+
+.transition div:nth-child(3){
+  width: 100%;
+  height: 33.3%;
+  background-color: #cad639;
+}
+
+
+/*SECOND CONTAINER STYLE*/
+
+
+.second-container{
+  height: auto;
+  width: 100%;
+  margin-top: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-size: cover;
+}
+
+.img-container{
+  width: 84%;
+  margin-bottom: 5vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.img-text-etape{
+  width: 30%;
+}
+
+.etape{
+  font-size: 1.8rem;
+  font-family: 'Cabin', semi-bold;
+}
+
+.etape-description{
+  font-size: 1.4rem;
+  font-family: 'Cabin', regular;
+}
+
+.img-etape{
+  width: 100%;
+  margin-bottom: 5vh;
+}
+
+.img-etape-text{
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-family: "Cabin", regular;
+}
+
+
+.etape-btn{
+  width: 30%;
+  display: flex;
+  align-items: center;
+  flex-direction: column-reverse;
+}
+
+
+.etape-btn a{
+  background-color: #000;
+  border-radius: 27px;
+  width: 40%;
+  height: 20%;
+  display: flex;
+  color: #fff;
+  text-decoration: none;
+  font-size: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.etape-btn a:hover{
+  background-color: #000;
+  border-radius: 27px;
+  width: 40%;
+  height: 20%;
+  display: flex;
+  color: #fff;
+  text-decoration: none;
+  font-size: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+#chart-div {
+  height: 350px;
+  width: 600px;
+}
+
+
+.questionnaire-title{
+  font-size: 5rem;
+  text-align: center;
+
+  margin-top: 10vh;
+}
+
+.text, .integer{
+  font-size: 3rem;
+  font-family: 'Cabin', semi-bold;
+
+}
+
+textarea{
+  font-size: 2rem !important;
+}
+
+.form-inputs{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: 200vh;
+  width: 50%;
+}
+
+
+.btn-light{
+  padding: 15px !important;
+  background-color: #000 !important;
+  color: #fff !important;
+  font-size: 3rem !important;
+  border-radius: 15px !important;
+}
+
+.btn-dark{
+  display: block !important;
+  margin: auto !important;
+  padding: 15px !important;
+  background-color: #000 !important;
+  color: #fff !important;
+  font-size: 3rem !important;
+  border-radius: 15px !important;
+}
+
+.question, .importance{
+  width: 34%;
+}
+
+.question div textarea{
+  height: 100px;
+}
+
+.importance div input{
+  height: 100px;
+  font-size: 3rem;
+}
+
+.form-inputs-questionnaire{
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container-questionnaire{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+  width: 20%;
+}
+
+.form-container-questionnaire div label{
+  font-size: 3rem;
+}
+
+.new-evaluation{
+  font-size: 5rem;
+  text-align: center;
+}
+
+
+.rangevertical
+{
+  margin-top:80px;
+  transform:rotate(-90deg);
+  margin-bottom:80px;
+
+}
+
+.slider-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.slider-text-container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.third-container{
+  width: 100%;
+  padding-bottom: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.nav-bar{
+  position: sticky;
+  top: 8%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 70%;
+  align-items: center;
+  font-size: 1.7rem;
+}
+
+.five-elements{
+  width: 84%;
+  margin-top: 10vh;
+}
+
+
+.vertical-slider-wrapper{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h3{
+  font-size: 3rem !important;
+  font-family: "Cabin", Bold;
+  margin-bottom: 5vh !important;
+}
+
+.five-elements p {
+  font-size: 1.6rem;
+  font-family: "Cabin", Regular;
+}
+
+.five-element-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 8%;
+}
+
+.element{
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-top: 5vh;
+}
+
+.form-group.text.required.questionnaire_question1, .form-group.text.required.questionnaire_question2, .form-group.text.required.questionnaire_question3, .form-group.text.required.questionnaire_question4, .form-group.text.required.questionnaire_question5{
+  margin-bottom: 0 !important;
+  width: 60% !important;
+  margin-left: 5%;
+}
+
+
+.element input{
+  width: 100%;
+  font-size: 1.6rem;
+  border-radius: 3px;
+  border: 1px solid #DDD;
+}
+
+.bien-etre{
+  width: 90% !important;
+  font-size: 1.6rem !important;
+  border-radius: 3px !important;
+  border: 1px solid #DDD !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background-color: #E4E4E4 !important;
+}
+
+input.slider{
+  width: 100%;
+  position: relative;
+  background-color: green;
+}
+
+input.slider::slider-thumb{
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  background-color: #27ae60;
+  position: relative;
+  z-index: 3;
+}
+
+.important-text{
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+.element-btn{
+  position: absolute;
+  bottom: 2%;
+  right: 2%;
+  width: 8vw;
+  height: 8vh;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.element-btn a {
+
+  color: #fff;
+  font-size: 2rem;
+}
+
+.element-btn:hover a {
+
+  color: #fff;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.important-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  height: 100%;
+  background-color: #818A91;
+}
+
+.chart-container {
+  display : flex;
+  flex-direction: column;
+  position: absolute;
+  right: 47%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+}
+
+
+.total {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.note_cam {
+  display:flex;
+  position:absolute;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index:0;
+}
+
+#chartdiv {
+  position:absolute;
+  width: 100vh;
+  height: 500px;
+  component-align:center;
+  font-family: 'Montserrat';
+  font-size: 1.3rem;
+  z-index:100;
+}
+
+#charttotal{
+  position:absolute;
+  width: 100vh;
+  height: 700px;
+  component-align:center;
+  font-family: 'Montserrat';
+  font-size: 1.3rem;
+}
+
+#affichage {
+  text-align:center;
+  font-family: 'Montserrat';
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.vertical-slider-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 74%;
+}
+
+
+.vertical-slider{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.input-vertical-slider{
+  transform: rotate(-90deg) translateX(-50%);
+  width: 30vh;
+}
+
+
+.satisfaction-div{
+  width: 200px;
+  min-height: 50px;
+  border-radius: 30px;
+  margin-top: 20vh;
+  word-wrap: break-word;
+}
+
+.satisfaction-div p{
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+  font-size: 2rem;
+}
+
+.satisfaction-div1{
+
+  background-color: #384B9B;
+
+}
+
+.satisfaction-div2{
+  background-color: #ED6B80;
+}
+
+.satisfaction-div3{
+  background-color: #F8CF62;
+}
+
+.satisfaction-div4{
+  background-color: #81B3A3;
+}
+
+.satisfaction-div5{
+  background-color: #B6D239;
+}
+
+.new-form-container{
+  display: flex;
+  align-items: center;
+}
+
+
+label.required{
+  display: none;
+}
+
+.enregistrer{
+  height: 50px;
+  width: 140px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-top: 5vh;
+  transform: translateX(-50%);
+
+}
+
+
+
+
+.next-step{
+  background-color: #000!important;
+  margin-top: 5vh;
+  color: #FFFFFF!important;
+
+  padding: 15px!important;
+
+  font-size: 15px!important;
+}
