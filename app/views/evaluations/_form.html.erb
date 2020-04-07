@@ -13,25 +13,25 @@
     <div class="vertical-slider">
       <input id="score2"></input>
       <%= f.input :value2, input_html: { id:'range2', class: 'input-vertical-slider', type: 'range', min: '0', max: '10', value: '5', onchange: 'rangeSlider2()'}%>
-      <div class="satisfaction-div2"></div>
+      <div class="satisfaction-div2"><%= @questionnaire.question2 %></div>
     </div>
 
     <div class="vertical-slider">
       <input id="score3"></input>
       <%= f.input :value3, input_html: { id:'range3', class: 'input-vertical-slider', type: 'range', min: '0', max: '10', value: '5', onchange: 'rangeSlider3()'}%>
-      <div class="satisfaction-div3"></div>
+      <div class="satisfaction-div3"><%= @questionnaire.question3 %></div>
     </div>
 
     <div class="vertical-slider">
       <input id="score4"></input>
       <%= f.input :value4, input_html: { id:'range4', class: 'input-vertical-slider', type: 'range', min: '0', max: '10', value: '5', onchange: 'rangeSlider4()'}%>
-      <div class="satisfaction-div4"></div>
+      <div class="satisfaction-div4"><%= @questionnaire.question4 %></div>
     </div>
 
     <div class="vertical-slider">
       <input id="score5"></input>
       <%= f.input :value5, input_html: { id:'range5', class: 'input-vertical-slider', type: 'range', min: '0', max: '10', value: '5', onchange: 'rangeSlider5()'}%>
-      <div class="satisfaction-div5"></div>
+      <div class="satisfaction-div5"><%= @questionnaire.question5 %></div>
     </div>
       <%= f.submit 'Enregistrer', class: 'enregistrer btn btn-outline-success' %>
   </div>
