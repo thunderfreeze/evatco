@@ -6,14 +6,13 @@ class EvaluationsController < ApplicationController
   # GET /evaluations.json
   def index
     @evaluations = Evaluation.all
-    
+
   end
 
   # GET /evaluations/1
   # GET /evaluations/1.json
   def show
-    @evaluation.questionnaire_id = params[:id]
-    @questionnaire = Questionnaire.find(params[:id])
+    @questionnaire = @evaluation.questionnaire
   end
 
   # GET /evaluations/new
@@ -34,8 +33,8 @@ class EvaluationsController < ApplicationController
 
 
 
-    
-    
+
+
 
     respond_to do |format|
       if @evaluation.save
