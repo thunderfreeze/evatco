@@ -3,16 +3,22 @@
 
 
 
- <div class='chart-container'>
+<div class='chart-container'>
     <div class='total'>
-      <div class='note_cam'>
-        <div id="chartdiv"></div>
-        <div id="charttotal"></div>
-      </div>
-       <div id='affichage'><%= @evaluation.score %></div>
-     </div>
-   </div>
+            <div class='note_cam'>
+                <div id="chartdiv"></div>
+                <div id="charttotal"></div>
+            </div>
+        <div id='affichage'><%= @evaluation.score %></div>
+    </div>
+</div>
 
+<div style="margin-top: 3rem;">
+<h6><%= @evaluation.value1 %></h6>
+<h6><%= @evaluation.value5 %></h6>
+<h6><%= @questionnaire.importance1 %></h6>
+<h6><%= @questionnaire.importance5 %></h6>
+</div>
 
 
 <script src="https://www.amcharts.com/lib/4/core.js"></script>
@@ -48,17 +54,18 @@
   charttot.hiddenState.properties.opacity = 0; // this creates initial fade-in
   charttot.innerRadius = am4core.percent(11);
 
-  var note1 = 4;
-  var note2 = 5;
-  var note3 = 6;
-  var note4 = 8;
-  var note5 = 2;
+  var note1 = <%= @evaluation.value1 %>;
+  var note2 = <%= @evaluation.value2 %>;
+  var note3 = <%= @evaluation.value3 %>;
+  var note4 = <%= @evaluation.value4 %>;
+  var note5 = <%= @evaluation.value5 %>;
 
-  var val1 = 70 ;
-  var val2 = 50;
-  var val3 = 30;
-  var val4 = 100;
-  var val5 = 40;
+
+  var val1 = <%= @questionnaire.importance1 %>;
+  var val2 = <%= @questionnaire.importance2 %>;
+  var val3 = <%= @questionnaire.importance3 %>;
+  var val4 = <%= @questionnaire.importance4 %>;
+  var val5 = <%= @questionnaire.importance5 %>;
 
   chart.data = [
 
@@ -66,19 +73,19 @@
       choice: "Choix 1",
       part: val1,
       note: note1,
-      "color": am4core.color('#ED6B80')
+      "color": am4core.color('#384B9B')
     },
     {
       choice: "Choix 2",
       part: val2,
       note: note2,
-      "color": am4core.color('#E9A7E5')
+      "color": am4core.color('#ED6B80')
     },
     {
       choice: "Choix 3",
       part: val3,
       note: note3,
-      "color": am4core.color('#384B9B')
+      "color": am4core.color('#F8CF62')
     },
     {
       choice: "Choix 4",
@@ -90,7 +97,7 @@
       choice: "Choix 5",
       part: val5,
       note: note5,
-      "color": am4core.color('#F8CF62')
+      "color": am4core.color('#B6D239')
     },
 
   ];
@@ -101,19 +108,19 @@
       choice: "Choix 1",
       part: val1,
       note: 1,
-      "color": am4core.color('#ED6B80')
+      "color": am4core.color('#384B9B')
     },
     {
       choice: "Choix 2",
       part: val2,
       note: 1,
-      "color": am4core.color('#E9A7E5')
+      "color": am4core.color('#ED6B80')
     },
     {
       choice: "Choix 3",
       part: val3,
       note: 1,
-      "color": am4core.color('#384B9B')
+      "color": am4core.color('#F8CF62')
     },
     {
       choice: "Choix 4",
@@ -125,7 +132,7 @@
       choice: "Choix 5",
       part: val5,
       note: 1,
-      "color": am4core.color('#F8CF62')
+      "color": am4core.color('#B6D239')
     },
 
   ];

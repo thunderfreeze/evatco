@@ -12,6 +12,8 @@ class EvaluationsController < ApplicationController
   # GET /evaluations/1
   # GET /evaluations/1.json
   def show
+    @evaluation.questionnaire_id = params[:questionnaire_id]
+    @questionnaire = Questionnaire.find(params[:questionnaire_id])
   end
 
   # GET /evaluations/new
@@ -29,14 +31,15 @@ class EvaluationsController < ApplicationController
   # POST /evaluations.json
   def create
     @evaluation = Evaluation.new(evaluation_params)
-    
+
+
 
     
     
 
     respond_to do |format|
       if @evaluation.save
-        format.html { redirect_to @evaluation, notice: 'Evaluation was successfully created.' }
+        format.html { redirect_to evaluation_path(id: @evaluation.questionnaire_id), notice: 'Evaluation was successfully created.' }
         format.json { render :show, status: :created, location: @evaluation }
       else
         format.html { render :new }
