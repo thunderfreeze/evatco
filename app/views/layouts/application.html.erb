@@ -6,48 +6,26 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0">
   </head>
   <body>
-    <nav class="navbar navbar-light bg-transparent">
-      <%= link_to root_path, class: 'navbar-brand' do %>
-         <%= image_tag "logo.png", class: 'img-fluid' %>
-      <% end %>
+<nav class="navbar navbar-light bg-transparent">
+    <%= link_to root_path, class: 'navbar-brand' do %>
+    <%= image_tag "logo.png", class: 'img-fluid' %>
+    <% end %>
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>
+    </button>
 
-      <div class="collapse navbar-collapse" id="navbar">
+    <div class="collapse navbar-collapse text-right" id="navbar">
         <% if user_signed_in? %>
-          <p>Bonjour <%= current_user.email %></p>
-          <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
-          <%= link_to 'Editer mon profil', edit_user_registration_path, class: "btn btn-primary" %>
+        <p>Bonjour <%= current_user.email %></p>
+        <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+        <%= link_to 'Editer mon profil', edit_user_registration_path, class: "btn btn-primary" %>
         <% end %>
-
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown09">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-md-0">
-          <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-        </form>
-      </div>
-    </nav>
+    </div>
+</nav>
 
     <main class="container-fluid">
       <%= yield %>
