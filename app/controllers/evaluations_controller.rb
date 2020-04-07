@@ -12,8 +12,7 @@ class EvaluationsController < ApplicationController
   # GET /evaluations/1
   # GET /evaluations/1.json
   def show
-    @evaluation.questionnaire_id = params[:questionnaire_id]
-    @questionnaire = Questionnaire.find(params[:questionnaire_id])
+    @questionnaire = Questionnaire.find(params[:id])
   end
 
   # GET /evaluations/new
