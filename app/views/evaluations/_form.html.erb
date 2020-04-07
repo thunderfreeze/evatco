@@ -9,59 +9,61 @@
       <p> voir je peux mettre 4.</p>
 
     <%= f.association :questionnaire, as: :hidden %>
-    <div class="vertical-slider-container">
-      <div>
-       <div class="range-slider-vertical">
-          <span id="rs-bullet1" class="rs-label-vertical purple">0</span>
-          <%= f.input :value1, input_html: { id:'rs-range-line1', class: 'rs-range-vertical purple', type: 'range', min: '0', max: '10', value: '0', onchange: 'rangeSlider1()'}%>
+    <div class="vertical-slider-wrapper">
+      <div class="vertical-slider-container">
+        <div>
+         <div class="range-slider-vertical">
+            <span id="rs-bullet1" class="rs-label-vertical purple">0</span>
+            <%= f.input :value1, input_html: { id:'rs-range-line1', class: 'rs-range-vertical purple', type: 'range', min: '0', max: '10', value: '0', onchange: 'rangeSlider1()'}%>
+          </div>
+          <div class="satisfaction-div1 satisfaction-div">
+            <p><%= @questionnaire.question1 %></p>
+          </div>
         </div>
-        <div class="satisfaction-div1 satisfaction-div">
-          <p><%= @questionnaire.question1 %></p>
-        </div>
-      </div>
 
-      <div>
-       <div class="range-slider-vertical">
-          <span id="rs-bullet2" class="rs-label-vertical pink">0</span>
-          <%= f.input :value2, input_html: { id:'rs-range-line2', class: 'rs-range-vertical pink', type: 'range', min: '0', max: '10', value: '0', onchange: 'rangeSlider2()'}%>
+        <div>
+         <div class="range-slider-vertical">
+            <span id="rs-bullet2" class="rs-label-vertical pink">0</span>
+            <%= f.input :value2, input_html: { id:'rs-range-line2', class: 'rs-range-vertical pink', type: 'range', min: '0', max: '10', value: '0', onchange: 'rangeSlider2()'}%>
+          </div>
+          <div class="satisfaction-div2 satisfaction-div">
+            <p><%= @questionnaire.question2 %></p>
+          </div>
         </div>
-        <div class="satisfaction-div2 satisfaction-div">
-          <p><%= @questionnaire.question2 %></p>
-        </div>
-      </div>
 
-      <div>
-       <div class="range-slider-vertical">
-          <span id="rs-bullet3" class="rs-label-vertical yellow">0</span>
-          <%= f.input :value3, input_html: { id:'rs-range-line3', class: 'rs-range-vertical yellow', type: 'range', min: '0', max: '10', value: '0', onchange: 'rangeSlider3()'}%>
+        <div>
+         <div class="range-slider-vertical">
+            <span id="rs-bullet3" class="rs-label-vertical yellow">0</span>
+            <%= f.input :value3, input_html: { id:'rs-range-line3', class: 'rs-range-vertical yellow', type: 'range', min: '0', max: '10', value: '0', onchange: 'rangeSlider3()'}%>
+          </div>
+          <div class="satisfaction-div3 satisfaction-div">
+            <p><%= @questionnaire.question3 %></p>
+          </div>
         </div>
-        <div class="satisfaction-div3 satisfaction-div">
-          <p><%= @questionnaire.question3 %></p>
-        </div>
-      </div>
 
-      <div>
-       <div class="range-slider-vertical">
-          <span id="rs-bullet4" class="rs-label-vertical dark-green">0</span>
-          <%= f.input :value4, input_html: { id:'rs-range-line4', class: 'rs-range-vertical dark-green', type: 'range', min: '0', max: '10', value: '0', onchange: 'rangeSlider4()'}%>
+        <div>
+         <div class="range-slider-vertical">
+            <span id="rs-bullet4" class="rs-label-vertical dark-green">0</span>
+            <%= f.input :value4, input_html: { id:'rs-range-line4', class: 'rs-range-vertical dark-green', type: 'range', min: '0', max: '10', value: '0', onchange: 'rangeSlider4()'}%>
+          </div>
+          <div class="satisfaction-div4 satisfaction-div">
+            <p><%= @questionnaire.question4 %></p>
+          </div>
         </div>
-        <div class="satisfaction-div4 satisfaction-div">
-          <p><%= @questionnaire.question4 %></p>
-        </div>
-      </div>
 
-      <div>
-       <div class="range-slider-vertical">
-          <span id="rs-bullet5" class="rs-label-vertical light-green">0</span>
-          <%= f.input :value5, input_html: { id:'rs-range-line5', class: 'rs-range-vertical light-green', type: 'range', min: '0', max: '10', value: '0', onchange: 'rangeSlider5()'}%>
+        <div>
+         <div class="range-slider-vertical">
+            <span id="rs-bullet5" class="rs-label-vertical light-green">0</span>
+            <%= f.input :value5, input_html: { id:'rs-range-line5', class: 'rs-range-vertical light-green', type: 'range', min: '0', max: '10', value: '0', onchange: 'rangeSlider5()'}%>
+          </div>
+          <div class="satisfaction-div5 satisfaction-div">
+            <p><%= @questionnaire.question5 %></p>
+          </div>
         </div>
-        <div class="satisfaction-div5 satisfaction-div">
-          <p><%= @questionnaire.question5 %></p>
-        </div>
-      </div>
 
-      <%= f.submit 'Enregistrer', class: 'enregistrer btn btn-outline-success' %>
-  </div>
+        <%= f.submit 'Enregistrer', class: 'enregistrer btn btn-outline-success' %>
+      </div>
+    </div>
 </section>
 
 
