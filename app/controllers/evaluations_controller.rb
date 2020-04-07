@@ -30,12 +30,6 @@ class EvaluationsController < ApplicationController
   # POST /evaluations.json
   def create
     @evaluation = Evaluation.new(evaluation_params)
-
-
-
-
-
-
     respond_to do |format|
       if @evaluation.save
         format.html { redirect_to evaluation_path(id: @evaluation.questionnaire_id), notice: 'Evaluation was successfully created.' }
@@ -82,7 +76,5 @@ class EvaluationsController < ApplicationController
     def evaluation_params
       params.require(:evaluation).permit(:questionnaire_id, :value1, :value2, :value3, :value4, :value5, :score)
     end
-
-
 
 end
