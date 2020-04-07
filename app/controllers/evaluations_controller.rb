@@ -81,5 +81,9 @@ class EvaluationsController < ApplicationController
       params.require(:evaluation).permit(:questionnaire_id, :value1, :value2, :value3, :value4, :value5, :score)
     end
 
+    def set_questionnaire
+      @questionnaire = Questionnaire.find(params[:questionnaire_id])
+    end
+
 
 end

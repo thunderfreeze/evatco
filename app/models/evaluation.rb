@@ -33,6 +33,8 @@ class Evaluation < ApplicationRecord
     "Evaluation du #{created_at.strftime '%d/%m/%Y'}"
   end
 
+  
+
   protected
 
   def compute_score
