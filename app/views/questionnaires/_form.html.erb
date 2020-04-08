@@ -5,16 +5,18 @@
 
 <section id="thirdContainer" class="third-container">
 
-    <div class="container-fluid mt-5">
-    <h1>Etape 1 : Mes 5 éléments</h1>
+    <div class="container">
+        <div class="mt-3 mb-5">
+        <h1>Etape 1 : Mes 5 éléments</h1>
 
-        <p>Les éléments de ma qualité de vie. Prenez quelques minutes. Définissez par une phrase dans les champs suivants :</p>
-        <p>Les 5 <strong>éléments</strong> essentiels pour vous afin d'avoir "une bonne et belle vie".</p>
-        <p>Les 5 <strong>notes</strong> attribuées à ces champs correspondantes à une importance sur 100.</p>
+            <p>Les éléments de ma qualité de vie. Prenez quelques minutes. Définissez par une phrase dans les champs suivants :</p>
+            <p>Les 5 <strong>éléments</strong> essentiels pour vous afin d'avoir "une bonne et belle vie".</p>
+            <p>Les 5 <strong>notes</strong> attribuées à ces champs correspondantes à une importance sur 100.</p>
+        </div>
     </div>
     <div class="container">
         <div class="mt-5 mb-5">
-            <div class="row mb-4">
+            <div class="row mb-5">
                 <div class="col-md-2">
                     <div class="colored-div colored-div--purple"></div>
                 </div>
@@ -37,7 +39,7 @@
                 </div>
             </div>
 
-            <div class="row mb-4">
+            <div class="row mb-5">
                 <div class="col-md-2">
                     <div class="colored-div colored-div--pink"></div>
                 </div>
@@ -59,7 +61,7 @@
                 </div>
             </div>
 
-            <div class="row mb-4">
+            <div class="row mb-5">
                 <div class="col-md-2">
                     <div class="colored-div colored-div--yellow"></div>
                 </div>
@@ -81,7 +83,7 @@
                 </div>
             </div>
 
-            <div class="row mb-4">
+            <div class="row mb-5">
                 <div class="col-md-2">
                     <div class="colored-div colored-div--green"></div>
                 </div>
@@ -104,7 +106,7 @@
                 </div>
             </div>
 
-            <div class="row mb-4">
+            <div class="row mb-5">
                 <div class="col-md-2">
                     <div class="colored-div colored-div--light-green"></div>
                 </div>
@@ -126,8 +128,8 @@
                 </div>
             </div>
 
-            <div class="form-actions mt-5">
-                <%= f.button :submit, class: "btn btn-success" %>
+            <div class="form-actions mt-5 text-center">
+                <%= f.button :submit, class: "btn btn-dark rounded-pill" %>
             </div>
         </div>    
     </div>
@@ -143,7 +145,7 @@
     function showSliderValue1() {
         rangeBulletTest1.innerHTML = rangeSliderTest1.value;
         var bulletPosition1 = (rangeSliderTest1.value /rangeSliderTest1.max);
-        rangeBulletTest1.style.left = (bulletPosition1 * 263.1) + "%";
+        rangeBulletTest1.style.left = (bulletPosition1 * 92.1) + "%";
     }
 
     var rangeSliderTest2 = document.getElementById("rs-range-line2");
@@ -153,7 +155,7 @@
     function showSliderValue2() {
         rangeBulletTest2.innerHTML = rangeSliderTest2.value;
         var bulletPosition2 = (rangeSliderTest2.value /rangeSliderTest2.max);
-        rangeBulletTest2.style.left = (bulletPosition2 * 263.1) + "%";
+        rangeBulletTest2.style.left = (bulletPosition2 * 92.1) + "%";
     }
 
     var rangeSliderTest3 = document.getElementById("rs-range-line3");
@@ -163,7 +165,7 @@
     function showSliderValue3() {
         rangeBulletTest3.innerHTML = rangeSliderTest3.value;
         var bulletPosition3 = (rangeSliderTest3.value /rangeSliderTest3.max);
-        rangeBulletTest3.style.left = (bulletPosition3 * 263.1) + "%";
+        rangeBulletTest3.style.left = (bulletPosition3 * 92.1) + "%";
     }
 
     var rangeSliderTest4 = document.getElementById("rs-range-line4");
@@ -173,7 +175,7 @@
     function showSliderValue4() {
         rangeBulletTest4.innerHTML = rangeSliderTest4.value;
         var bulletPosition4 = (rangeSliderTest4.value /rangeSliderTest4.max);
-        rangeBulletTest4.style.left = (bulletPosition4 * 263.1) + "%";
+        rangeBulletTest4.style.left = (bulletPosition4 * 92.1) + "%";
     }
 
     var rangeSliderTest5 = document.getElementById("rs-range-line5");
@@ -183,7 +185,7 @@
     function showSliderValue5() {
         rangeBulletTest5.innerHTML = rangeSliderTest5.value;
         var bulletPosition5 = (rangeSliderTest5.value /rangeSliderTest5.max);
-        rangeBulletTest5.style.left = (bulletPosition5 * 263.1) + "%";
+        rangeBulletTest5.style.left = (bulletPosition5 * 92.1) + "%";
     }
 
 </script>

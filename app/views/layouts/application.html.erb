@@ -5,7 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'application', media: 'all' %>
     <meta name="viewport" content="width=device-width, minimum-scale=1.0">
   </head>
   <body>
@@ -16,14 +16,19 @@
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-    </button>
-
+    </button>   
     <div class="collapse navbar-collapse text-right" id="navbar">
         <% if user_signed_in? %>
-        <p>Bonjour <%= current_user.email %></p>
-        <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
-        <%= link_to 'Editer mon profil', edit_user_registration_path, class: "btn btn-primary" %>
+                <p>Bonjour <%= current_user.email %></p>
+                <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+                <%= link_to 'Editer mon profil', edit_user_registration_path, class: "btn btn-primary" %>
+            <% else %>
+                <p>Bonjour voyageur !</p>
+                <%= link_to 'Se connecter', user_session_path, class: "btn btn-primary" %>
+                <%= link_to 'S\'inscrire', new_user_registration_path, class: "btn btn-secondary" %>
         <% end %>
+
+
     </div>
 </nav>
 
