@@ -2,41 +2,44 @@
 
 <h1>Evaluations</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Questionnaire</th>
-      <th>Value1</th>
-      <th>Value2</th>
-      <th>Value3</th>
-      <th>Value4</th>
-      <th>Value5</th>
+<div>
+    <table class="table table-bordered">
+        <thead class="thead-dark">   
+            <tr>
+                <th scope="col">Questionnaire</th>
+                <th scope="col">Valeur 1</th>
+                <th scope="col">Valeur 2</th>
+                <th scope="col">Valeur 3</th>
+                <th scope="col">Valeur 4</th>
+                <th scope="col">Valeur 5</th>
+                <th scope="col">Score</th>
+                <th scope="col">Outils</th>
 
+            </tr>
+        </thead>
 
-    </tr>
-  </thead>
+        <tbody>
+        <% @evaluations.each do |evaluation| %>
+            <tr>
+                <td><%= evaluation.questionnaire %></td>
+                <td><%= evaluation.value1 %></td>
+                <td><%= evaluation.value2 %></td>
+                <td><%= evaluation.value3 %></td>
+                <td><%= evaluation.value4 %></td>
+                <td><%= evaluation.value5 %></td>
+                <th scope="row"><%= evaluation.score %></th>
+                <td>
+                    <%= link_to 'Voir', evaluation, class: 'btn btn-success rounded-pill' %>
+                    <%= link_to 'Editer', edit_evaluation_path(evaluation), class: 'btn btn-primary rounded-pill' %>
+                    <%= link_to 'Supprimer', evaluation, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger rounded-pill' %>
+                </td>
+            </tr>
+        <% end %>
+        </tbody>
+    </table>
+</div>
 
+<div class="form-actions mt-5 text-center">
+    <%= link_to 'New Evaluation', new_evaluation_path, class: "btn btn-dark rounded-pill" %>
+</div>
 
-
-  <tbody>
-    <% @evaluations.each do |evaluation| %>
-      <tr>
-        <td><%= evaluation.questionnaire %></td>
-        <td><%= evaluation.value1 %></td>
-        <td><%= evaluation.value2 %></td>
-        <td><%= evaluation.value3 %></td>
-        <td><%= evaluation.value4 %></td>
-        <td><%= evaluation.value5 %></td>
-        <td><%= evaluation.score %></td>
-        <td><%= link_to 'Show', evaluation %></td>
-        <td><%= link_to 'Edit', edit_evaluation_path(evaluation) %></td>
-        <td><%= link_to 'Destroy', evaluation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-
-<%= link_to 'New Evaluation', new_evaluation_path %>
