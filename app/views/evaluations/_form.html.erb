@@ -1,4 +1,6 @@
 <%= simple_form_for(@evaluation) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
 <div class="container">
     <div class="mt-3 mb-5">
@@ -17,18 +19,13 @@
         <%= f.association :questionnaire, as: :hidden %>
 
     <div class="mt-3 mb-5">
-        <div class="row">
+        <div class="row mt-5">
             <div class="col-md-2 offset-1">
                 <div class="range-slider-vertical">
                     <span id="rs-bullet1" class="rs-label-vertical purple">0</span>
                     <%= f.input :value1,
                     label: false,
                     input_html: { id:'rs-range-line1', class: 'rs-range-vertical purple', type: 'range', min: '0', max: '10', value: '0', onchange: 'rangeSlider1()'}%>
-                </div>
-                <div>
-                    <div class="colored-div colored-div--purple">
-                        <p class="text-center text-white p-2"><%= @evaluation.questionnaire.question1 %></p>
-                    </div>
                 </div>
             </div>
 
@@ -39,33 +36,27 @@
                     label: false,
                     input_html: { id:'rs-range-line2', class: 'rs-range-vertical pink', type: 'range', min: '0', max: '10', value: '0', onchange: 'rangeSlider2()'}%>
                 </div>
-                <div class="text-center p-2">
-                    <%= @evaluation.questionnaire.question2 %>
-                </div>
+                
             </div>
 
             <div class="col-md-2">
                 <div class="range-slider-vertical">
-                    <span id="rs-bullet1" class="rs-label-vertical yellow">0</span>
+                    <span id="rs-bullet3" class="rs-label-vertical yellow">0</span>
                     <%= f.input :value3,
                     label: false,
                     input_html: { id:'rs-range-line3', class: 'rs-range-vertical yellow', type: 'range', min: '0', max: '10', value: '0', onchange: 'rangeSlider3()'}%>
                 </div>
-                <div class="text-center p-2">
-                    <%= @evaluation.questionnaire.question3 %>
-                </div>
+                
             </div>
 
             <div class="col-md-2">
                 <div class="range-slider-vertical">
-                    <span id="rs-bullet1" class="rs-label-vertical green">0</span>
+                    <span id="rs-bullet4" class="rs-label-vertical green">0</span>
                     <%= f.input :value4,
                     label: false,
                     input_html: { id:'rs-range-line4', class: 'rs-range-vertical green', type: 'range', min: '0', max: '10', value: '0', onchange: 'rangeSlider4()'}%>
                 </div>
-                <div class="text-center p-2">
-                    <%= @evaluation.questionnaire.question4 %>
-                </div>
+                
             </div>
 
             <div class="col-md-2">
@@ -73,16 +64,51 @@
                     <span id="rs-bullet5" class="rs-label-vertical light-green">0</span>
                     <%= f.input :value5,
                     label: false,
-                    input_html: { id:'rs-range-line1', class: 'rs-range-vertical light-green', type: 'range', min: '0', max: '10', value: '0', onchange: 'rangeSlider5()'}%>
+                    input_html: { id:'rs-range-line5', class: 'rs-range-vertical light-green', type: 'range', min: '0', max: '10', value: '0', onchange: 'rangeSlider5()'}%>
                 </div>
-                <div class="text-center p-2">
-                    <%= @evaluation.questionnaire.question5 %>
+
+            </div>
+        </div>
+<br>
+        <div class="mt-5">
+            <div class="row">
+                <div class="col-md-2 offset-1">
+                    <div class="text-wrap colored-div--purple rounded-pill">
+                        <p class="text-center text-white p-2"><%= @evaluation.questionnaire.question1 %></p>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="text-wrap colored-div--pink rounded-pill">
+                        <p class="text-center text-white p-2"><%= @evaluation.questionnaire.question2 %></p>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="text-wrap colored-div--yellow rounded-pill">
+                        <p class="text-center text-white p-2"><%= @evaluation.questionnaire.question3 %></p>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="text-wrap colored-div--green rounded-pill">
+                        <p class="text-center text-white p-2"><%= @evaluation.questionnaire.question4 %></p>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="text-wrap colored-div--light-green rounded-pill">
+                        <p class="text-center text-white p-2"><%= @evaluation.questionnaire.question5 %></p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
+                <div class="form-actions mt-5 text-center">
+                    <%= f.button :submit, class: "btn btn-dark rounded-pill", value: "Voir mes résultats" %>
+                </div>
+<% end %>
 
 <script type="text/javascript">
   var rangeSlider1 = document.getElementById("rs-range-line1");
@@ -93,7 +119,7 @@
   function showSliderValue1() {
     rangeBullet1.innerHTML = rangeSlider1.value;
     var bulletPosition1 = (rangeSlider1.value /rangeSlider1.max);
-    rangeBullet1.style.left = (bulletPosition1 * 150) + "px";
+    rangeBullet1.style.left = (bulletPosition1 * 80) + "%";
   }
 
   var rangeSlider2 = document.getElementById("rs-range-line2");
@@ -104,7 +130,7 @@
   function showSliderValue2() {
     rangeBullet2.innerHTML = rangeSlider2.value;
     var bulletPosition2 = (rangeSlider2.value /rangeSlider2.max);
-    rangeBullet2.style.left = (bulletPosition2 * 150) + "px";
+    rangeBullet2.style.left = (bulletPosition2 * 80) + "%";
   }
 
   var rangeSlider3 = document.getElementById("rs-range-line3");
@@ -115,7 +141,7 @@
   function showSliderValue3() {
     rangeBullet3.innerHTML = rangeSlider3.value;
     var bulletPosition3 = (rangeSlider3.value /rangeSlider3.max);
-    rangeBullet3.style.left = (bulletPosition3 * 150) + "px";
+    rangeBullet3.style.left = (bulletPosition3 * 80) + "%";
   }
 
   var rangeSlider4 = document.getElementById("rs-range-line4");
@@ -126,7 +152,7 @@
   function showSliderValue4() {
     rangeBullet4.innerHTML = rangeSlider4.value;
     var bulletPosition4 = (rangeSlider4.value /rangeSlider4.max);
-    rangeBullet4.style.left = (bulletPosition4 * 150) + "px";
+    rangeBullet4.style.left = (bulletPosition4 * 80) + "%";
   }
 
   var rangeSlider5 = document.getElementById("rs-range-line5");
@@ -137,8 +163,8 @@
   function showSliderValue5() {
     rangeBullet5.innerHTML = rangeSlider5.value;
     var bulletPosition5 = (rangeSlider5.value /rangeSlider5.max);
-    rangeBullet5.style.left = (bulletPosition5 * 150) + "px";
+    rangeBullet5.style.left = (bulletPosition5 * 80) + "%";
   }
 </script>
 
-<% end %>
+
