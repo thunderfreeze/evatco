@@ -3,7 +3,7 @@
 
 
 <div class='row'>
-  <div class=" display-score">
+  <div class="col-md-6 display-score">
     <div class=''>
         <div class='total'>
                 <div class='note_cam'>
@@ -12,6 +12,14 @@
                 </div>
             <div id='affichage'><%= @evaluation.score %></div>
         </div>
+    </div>
+  </div>
+  <div class="col-md-6 d-flex justify-content-center align-item-center flex-column">
+    <p class="score-paragraph-intro">Votre qualiviscore est de:</p>
+    <p  class="score-paragraph"><%= @evaluation.score %>/100</p>
+    <div>
+      <a class="btn btn-dark mr-2" href="">Imprimer mes résultats</a>
+      <a class="btn btn-dark" href="">Je suis un professionnel</a>
     </div>
   </div>
 </div>
