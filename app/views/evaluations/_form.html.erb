@@ -2,25 +2,20 @@
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-<div class="container">
-    <div class="mt-3 mb-5">
-        <div class="five-elements">
-            <h1>Etape 3 : Mon niveau de satisfaction.</h1>
+<div class="jumbotron bg-transparent text-center rounded-0 mb-5">
+        <div>
+            <h1>Étape 2 : Mon niveau de satisfaction.</h1>
             <p>Grâce aux échelles ci dessous, notez votre niveau de satisfaction en ce moment pour chaque besoin.</p>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item"><strong>10</strong> correspond à “Très bien”</li>
-                <li class="list-group-item"><strong>5</strong> correspond à “J'estime cela moyen”</li>
-                <li class="list-group-item"><strong>0</strong> correspond à “Ça ne va pas du tout”</li>
-            </ul><br>
-            <p>Par exemple : En ce moment je vois ma famille régulièrement donc je mets 10. Au contraire si en ce moment je n’ai pas le temps de la voir je peux mettre 3.</p><br>
+            <p><strong>10</strong> correspond à “Très bien” <br>
+            <strong>5</strong> correspond à “J'estime cela moyen” <br>
+            <strong>0</strong> correspond à “Ça ne va pas du tout”</p>
         </div>
-    </div>
+</div>
 
         <%= f.association :questionnaire, as: :hidden %>
-
-    <div class="mt-3 mb-5">
-        <div class="row mt-5">
-            <div class="col-md-2 offset-1">
+    <div class="slider-verticaux">
+        <div class="row mb-5 flex-nowrap">
+            <div class="col-md-2">
                 <div class="range-slider-vertical">
                     <span id="rs-bullet1" class="rs-label-vertical purple">5</span>
                     <%= f.input :value1,
@@ -66,48 +61,47 @@
                     label: false,
                     input_html: { id:'rs-range-line5', class: 'rs-range-vertical light-green', type: 'range', min: '0', max: '10', value: '5'}%>
                 </div>
-
             </div>
         </div>
 <br>
-        <div class="mt-5">
-            <div class="row">
-                <div class="col-md-2 offset-1">
-                    <div class="text-wrap colored-div--purple rounded-pill">
-                        <p class="text-center text-white p-2"><%= @evaluation.questionnaire.question1 %></p>
-                    </div>
-                </div>
-
-                <div class="col-md-2">
-                    <div class="text-wrap colored-div--pink rounded-pill">
-                        <p class="text-center text-white p-2"><%= @evaluation.questionnaire.question2 %></p>
-                    </div>
-                </div>
-
-                <div class="col-md-2">
-                    <div class="text-wrap colored-div--yellow rounded-pill">
-                        <p class="text-center text-white p-2"><%= @evaluation.questionnaire.question3 %></p>
-                    </div>
-                </div>
-
-                <div class="col-md-2">
-                    <div class="text-wrap colored-div--green rounded-pill">
-                        <p class="text-center text-white p-2"><%= @evaluation.questionnaire.question4 %></p>
-                    </div>
-                </div>
-
-                <div class="col-md-2">
-                    <div class="text-wrap colored-div--light-green rounded-pill">
-                        <p class="text-center text-white p-2"><%= @evaluation.questionnaire.question5 %></p>
-                    </div>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="text-wrap colored-div--purple">
+                    <p class="text-center text-white px-1 py-2"><%= @evaluation.questionnaire.question1 %></p>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-                <div class="form-actions mt-5 text-center">
-                    <%= f.button :submit, class: "btn btn-dark rounded-pill", value: "Voir mes résultats" %>
+
+            <div class="col-md-2">
+                <div class="text-wrap colored-div--pink">
+                    <p class="text-center text-white px-1 py-2"><%= @evaluation.questionnaire.question2 %></p>
                 </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="text-wrap colored-div--yellow">
+                    <p class="text-center text-white px-1 py-2"><%= @evaluation.questionnaire.question3 %></p>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="text-wrap colored-div--green">
+                    <p class="text-center text-white px-1 py-2"><%= @evaluation.questionnaire.question4 %></p>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="text-wrap colored-div--light-green">
+                    <p class="text-center text-white px-1 py-2"><%= @evaluation.questionnaire.question5 %></p>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                    <%= f.button :submit, class: "btn btn-dark rounded-pill text-center p-2", value: "Voir mes résultats ➔" %>
+            </div>
+        </div>
+
+
+    </div>
 <% end %>
 
 <script type="text/javascript">
