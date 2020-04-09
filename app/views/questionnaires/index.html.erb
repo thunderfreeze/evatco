@@ -1,7 +1,9 @@
 <p id="notice"><%= notice %></p>
 <h1 class="text-center my-5"> Mes questionnaires</h1>
 
-            <% @questionnaires.each do |questionnaire| %>
+
+
+<% @questionnaires.each do |questionnaire| %>
 <div class="table-responsive">
     <table class="table table-bordered table-striped">
         <thead class="thead-dark">
@@ -66,4 +68,4 @@
 
 <br>
 
-<%= link_to 'Nouveau questionnaire', new_questionnaire_path %>
+<%= link_to 'Nouveau questionnaire', new_questionnaire_path, class: 'btn btn-dark rounded-0' %>

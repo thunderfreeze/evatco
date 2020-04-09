@@ -8,20 +8,25 @@
     <%= javascript_include_tag 'application' %>
     <meta name="viewport" content="width=device-width, minimum-scale=1.0">
   </head>
-  <body>
+<body>
+
+<div class="container">
     <nav class="navbar navbar-light bg-transparent">
-      <%= link_to home_index_path, class: 'navbar-brand' do %>
-         <%= image_tag "logo.png", class: 'img-fluid' %>
-      <% end %>
+        <%= link_to root_path, class: 'navbar-brand' do %>
+        <%= image_tag "logo.png", class: 'img-fluid' %>
+        <% end %>
     </nav>
-    <main class="container">
-      <div class="row mt-5 mb-5">
+</div>
+    
+<main class="container">
+    <div class="row mt-5 mb-5">
         <div class="col-md-6 offset-md-3">
-          <%= yield %>
+            <%= yield %>
         </div>
-      </div>
-    </main>
+    </div>
+</main>
     
     <%= render 'footer' %>
-  </body>
+    
+</body>
 </html>
