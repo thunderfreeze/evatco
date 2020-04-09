@@ -119,13 +119,10 @@ function foo () {
     var test3 = val3 / convertisseur;
     var test4 = val4 / convertisseur;
     var test5 = val5 / convertisseur;
-    var test6 = finalResult / convertisseur;
 
     document.getElementById('newVal1').value=Math.round(test1);
     document.getElementById('newVal2').value=Math.round(test2);
     document.getElementById('newVal3').value=Math.round(test3);
     document.getElementById('newVal4').value=Math.round(test4);
     document.getElementById('newVal5').value=Math.round(test5);
-    document.getElementById('newVal6').value=Math.round(test6);
-    document.getElementById('textInput6').value=Math.round(finalResult);
 }
