@@ -125,4 +125,5 @@ function foo () {
     document.getElementById('newVal3').value=Math.round(test3);
     document.getElementById('newVal4').value=Math.round(test4);
     document.getElementById('newVal5').value=Math.round(test5);
+
 }
