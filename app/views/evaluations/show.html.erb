@@ -1,27 +1,25 @@
 <h1 class="col mt-3 text-center evaluation-date"><%= @evaluation %></h1>
 
-<div>
-    <div class='row p-2 chartscore'>
-        <div class="col-md-6 d-flex justify-content-center align-item-center flex-column">
-            <div class='total'> 
-                <div class='note_cam'>
-                    <div id="chartdiv"></div> 
-                    <div id="charttotal"></div> 
-                </div>
-                <div id='affichage'>
-                    <%= @evaluation.score %>   
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<div class="row mb-5 mt-5" style="min-height: 50vh;">
+  <div class='p-2 chartscore d-flex justify-content-center align-item-center flex-column col-md-6'>
+    <div class='total'>
+      <div class='note_cam'>
+        <div id="chartdiv"></div>
+        <div id="charttotal"></div>
+      </div>
+        <div id='affichage'><%= @evaluation.score %></div>
+      </div>
+  </div>
 
-<div class="col-md-6 d-flex justify-content-center align-item-center flex-column">
+
+
+  <div class="col-md-6 d-flex justify-content-center align-item-center flex-column">
     <p class="display-4">Votre qualiviscore est de :</p>
     <p class="display-2"><%= @evaluation.score %>/100</p>
     <div>
         <a class="btn btn-dark " href="" onclick="javascript:window.print()">Imprimer mes résultats</a>
     </div>
+  </div>
 </div>
 
 <%
@@ -64,31 +62,31 @@ $(function() {
   chart.data = [
 
     {
-      choice: "Choix 1",
+      choice: "<%= @evaluation.questionnaire.question1 %>",
       part: val1,
       note: note1,
       "color": am4core.color('#384B9B')
     },
     {
-      choice: "Choix 2",
+      choice: "C<%= @evaluation.questionnaire.question2 %>",
       part: val2,
       note: note2,
       "color": am4core.color('#ED6B80')
     },
     {
-      choice: "Choix 3",
+      choice: "<%= @evaluation.questionnaire.question3 %>",
       part: val3,
       note: note3,
       "color": am4core.color('#F8CF62')
     },
     {
-      choice: "Choix 4",
+      choice: "<%= @evaluation.questionnaire.question4 %>",
       part: val4,
       note: note4,
       "color": am4core.color('#81B3A3')
     },
     {
-      choice: "Choix 5",
+      choice: "<%= @evaluation.questionnaire.question5 %>",
       part: val5,
       note: note5,
       "color": am4core.color('#B6D239')
@@ -99,31 +97,31 @@ $(function() {
   charttot.data = [
 
     {
-      choice: "Choix 1",
+      choice: "<%= @evaluation.questionnaire.question1 %>",
       part: val1,
       note: 1,
       "color": am4core.color('#384B9B')
     },
     {
-      choice: "Choix 2",
+      choice: "<%= @evaluation.questionnaire.question2 %>",
       part: val2,
       note: 1,
       "color": am4core.color('#ED6B80')
     },
     {
-      choice: "Choix 3",
+      choice: "<%= @evaluation.questionnaire.question3 %>",
       part: val3,
       note: 1,
       "color": am4core.color('#F8CF62')
     },
     {
-      choice: "Choix 4",
+      choice: "<%= @evaluation.questionnaire.question4 %>",
       part: val4,
       note: 1,
       "color": am4core.color('#81B3A3')
     },
     {
-      choice: "Choix 5",
+      choice: "<%= @evaluation.questionnaire.question5 %>",
       part: val5,
       note: 1,
       "color": am4core.color('#B6D239')
