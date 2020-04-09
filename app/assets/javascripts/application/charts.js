@@ -45,6 +45,8 @@ function oui(){
 }
 
 
+
+
 function updateTextInput1(val1) {
   document.getElementById('textInput').value=val1;
   foo();
@@ -127,3 +129,5 @@ function foo () {
     document.getElementById('newVal5').value=Math.round(test5);
 
 }
+
+
