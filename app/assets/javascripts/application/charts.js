@@ -1,5 +1,3 @@
-
-
 function rangeSlider1(){
   var range1 = document.querySelector('#rs-range-line1').value;
   console.log(range1);
@@ -30,22 +28,7 @@ function rangeSlider5(){
   document.getElementById('score5').value = range5;
 }
 
-
-
-
-
-
-
-
-function oui(){
-  var icon = document.querySelector('.icon');
-  icon.classList.toggle('active');
-  var menuContainer = document.querySelector('.menu-container');
-  menuContainer.classList.toggle('active');
-}
-
-
-
+// Horizontal sliders
 
 function updateTextInput1(val1) {
   document.getElementById('textInput').value=val1;
@@ -74,7 +57,7 @@ function updateTextInput5(val5) {
 }
 
 
-// vertical slider
+// Vertical slider
 
 function updateslider1() {
   slider1 = parseInt(document.getElementById('slider1').value);
@@ -107,7 +90,7 @@ function updateslider5() {
 }
 
 function foo () {
-    valbase = 20;
+  
     val1 = parseInt(document.getElementById('textInput').value);
     val2 = parseInt(document.getElementById('textInput2').value);
     val3 = parseInt(document.getElementById('textInput3').value);
@@ -127,7 +110,6 @@ function foo () {
     document.getElementById('newVal3').value=Math.round(test3);
     document.getElementById('newVal4').value=Math.round(test4);
     document.getElementById('newVal5').value=Math.round(test5);
-
 }
 
 
