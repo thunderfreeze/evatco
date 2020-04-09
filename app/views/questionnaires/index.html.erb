@@ -1,50 +1,69 @@
 <p id="notice"><%= notice %></p>
-<h1>Questionnaires</h1>
+<h1 class="text-center my-5"> Mes questionnaires</h1>
+
+            <% @questionnaires.each do |questionnaire| %>
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+            <th colspan="6">
+                <div class="d-flex justify-content-between align-items-center">
+                    Questionnaire n°<%= questionnaire.id %>
+                    <div>
+                    <%= link_to 'Voir', questionnaire, class: 'btn btn-success rounded-0' %>
+                    <%= link_to 'Editer', edit_questionnaire_path(questionnaire), class: 'btn btn-primary rounded-0' %>
+                    <%= link_to 'Supprimer', questionnaire, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger rounded-0' %>
+                    </div>
+                </div>
+            </th>
+        </thead>
+        <thead>
+            <tr>
+
+                <th scope="col">Question 1</th>
+                <th scope="col">Question 2</th>
+                <th scope="col">Question 3</th>
+                <th scope="col">Question 4</th>
+                <th scope="col">Question 5</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td><%= questionnaire.question1 %></td>
+                <td><%= questionnaire.question2 %></td>
+                <td><%= questionnaire.question3 %></td>
+                <td><%= questionnaire.question4 %></td>
+                <td><%= questionnaire.question5 %></td>
 
 
+            </tr>
+        </tbody>
+
+        <thead>
+            <tr>
+                <th scope="col">Importance 1</th>
+                <th scope="col">Importance 2</th>
+                <th scope="col">Importance 3</th>
+                <th scope="col">Importance 4</th>
+                <th scope="col">Importance 5</th>
 
 
-  <table>
-    <thead>
-      <tr>
-        <th>Utilisateur</th>
-        <th>Question1</th>
-        <th>Question2</th>
-        <th>Question3</th>
-        <th>Question4</th>
-        <th>Question5</th>
-        <th>Importance1</th>
-        <th>Importance2</th>
-        <th>Importance3</th>
-        <th>Importance4</th>
-        <th>Importance5</th>
-      </tr>
-    </thead>
+            </tr>
+        </thead>       
+        <tbody>
+            <tr>
+                <td><%= questionnaire.importance1 %></td>
+                <td><%= questionnaire.importance2 %></td>
+                <td><%= questionnaire.importance3 %></td>
+                <td><%= questionnaire.importance4 %></td>
+                <td><%= questionnaire.importance5 %></td>
 
-    <tbody>
-      <% @questionnaires.each do |questionnaire| %>
-        <tr>
-          <td><%= questionnaire.user %></td>
-          <td><%= questionnaire.question1 %></td>
-          <td><%= questionnaire.question2 %></td>
-          <td><%= questionnaire.question3 %></td>
-          <td><%= questionnaire.question4 %></td>
-          <td><%= questionnaire.question5 %></td>
-          <td><%= questionnaire.importance1 %></td>
-          <td><%= questionnaire.importance2 %></td>
-          <td><%= questionnaire.importance3 %></td>
-          <td><%= questionnaire.importance4 %></td>
-          <td><%= questionnaire.importance5 %></td>
-          <td><%= link_to 'Show', questionnaire %></td>
-          <td><%= link_to 'Edit', edit_questionnaire_path(questionnaire) %></td>
-          <td><%= link_to 'Destroy', questionnaire, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-
+            </tr>
+        </tbody>
+    </table>
+</div>
+<% end %>
 
 <br>
 
-<%= link_to 'New Questionnaire', new_questionnaire_path %>
+<%= link_to 'Nouveau questionnaire', new_questionnaire_path %>

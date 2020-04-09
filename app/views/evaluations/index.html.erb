@@ -2,7 +2,7 @@
 
 <h1>Evaluations</h1>
 
-<div>
+<div class="container">
     <table class="table table-bordered">
         <thead class="thead-dark">   
             <tr>
@@ -29,9 +29,9 @@
                 <td><%= evaluation.value5 %></td>
                 <th scope="row"><%= evaluation.score %></th>
                 <td>
-                    <%= link_to 'Voir', evaluation, class: 'btn btn-success rounded-pill' %>
-                    <%= link_to 'Editer', edit_evaluation_path(evaluation), class: 'btn btn-primary rounded-pill' %>
-                    <%= link_to 'Supprimer', evaluation, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger rounded-pill' %>
+                    <%= link_to 'Voir', evaluation, class: 'btn btn-success rounded-0' %>
+                    <%= link_to 'Editer', edit_evaluation_path(evaluation), class: 'btn btn-primary rounded-0' %>
+                    <%= link_to 'Supprimer', evaluation, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger rounded-0' %>
                 </td>
             </tr>
         <% end %>
