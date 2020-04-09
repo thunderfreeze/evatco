@@ -7,15 +7,15 @@
         <div id="chartdiv"></div>
         <div id="charttotal"></div>
       </div>
-        <div id='affichage' class="h4"><%= @evaluation.score %></div>
+        <div id='affichage'><%= @evaluation.score %></div>
       </div>
   </div>
 
 
 
   <div class="col-md-6 d-flex justify-content-center align-item-center flex-column">
-    <p class="qualiviscore">Votre qualiviscore est de :</p>
-    <p class="qualiviscore"><%= @evaluation.score %>/100</p>
+    <p class="display-4">Votre qualiviscore est de :</p>
+    <p class="display-2"><%= @evaluation.score %>/100</p>
     <div>
         <a class="btn btn-dark " href="" onclick="javascript:window.print()">Imprimer mes résultats</a>
     </div>
@@ -39,12 +39,24 @@ $(function() {
   // Themes end
 
   // Create chart
-  var chart = am4core.create("chartdiv", am4charts.PieChart);
-  chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
-  chart.innerRadius = am4core.percent(18);
-  var charttot = am4core.create("charttotal", am4charts.PieChart);
-  charttot.hiddenState.properties.opacity = 0; // this creates initial fade-in
-  charttot.innerRadius = am4core.percent(10);
+
+    var chart = am4core.create("chartdiv", am4charts.PieChart);
+    chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+    chart.innerRadius = am4core.percent(18);
+    var charttot = am4core.create("charttotal", am4charts.PieChart);
+    charttot.hiddenState.properties.opacity = 0; // this creates initial fade-in
+    charttot.innerRadius = am4core.percent(10);
+
+
+if (window.matchMedia("(max-width: 768px)").matches)
+    {                     
+        chart.innerRadius = am4core.percent(25);
+        charttot.innerRadius = am4core.percent(20);         
+    }
+
+
+
+
 
   var note1 = <%= @evaluation.value1 %>;
   var note2 = <%= @evaluation.value2 %>;
