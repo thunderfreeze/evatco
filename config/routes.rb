@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get 'home/index'
   resources :questionnaires
 
+  get '/rgpd', to: 'application#_rgpd'
+
   devise_for :users
   root 'home#index'
   
