@@ -31,7 +31,7 @@ class EvaluationsController < ApplicationController
     @evaluation = Evaluation.new(evaluation_params)
     respond_to do |format|
       if @evaluation.save
-        format.html { redirect_to evaluation_path(id: @evaluation.questionnaire_id) }
+        format.html { redirect_to evaluation_path(id: @evaluation.id) }
         format.json { render :show, status: :created, location: @evaluation }
       else
         format.html { render :new }
