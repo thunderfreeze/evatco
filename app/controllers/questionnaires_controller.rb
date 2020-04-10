@@ -11,12 +11,12 @@ class QuestionnairesController < ApplicationController
   # GET /questionnaires/1
   # GET /questionnaires/1.json
   def show
-    # @evaluation = Evaluation.find(params[:id])
   end
 
   # GET /questionnaires/new
   def new
     @questionnaire = Questionnaire.new
+
   end
 
   # GET /questionnaires/1/edit
