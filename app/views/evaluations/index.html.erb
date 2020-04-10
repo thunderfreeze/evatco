@@ -1,42 +1,47 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Evaluations</h1>
+<h1 class="text-center my-5">Mes évaluations</h1>
 
+<% @evaluations.each do |evaluation| %>
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+            <th colspan="6">
+                <div class="d-flex justify-content-between align-items-center">
+                    Evaluation n°<%= evaluation.id %>
+                    <div>
+                    <%= link_to 'Voir', evaluation, class: 'btn btn-success rounded-0' %>
+                    <%= link_to 'Editer', edit_evaluation_path(evaluation), class: 'btn btn-primary rounded-0' %>
+                    <%= link_to 'Supprimer', evaluation, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger rounded-0' %>
+                    </div>
+                </div>
+            </th>
+        </thead>
+        <thead>
+            <tr>
+                <th scope="col">Valeur 1</th>
+                <th scope="col">Valeur 2</th>
+                <th scope="col">Valeur 3</th>
+                <th scope="col">Valeur 4</th>
+                <th scope="col">Valeur 5</th>
+                <th scope="col">Score</th>
+            </tr>
+        </thead>
 
-<table class="table table-bordered table-responsive">
-    <thead class="thead-dark">   
-        <tr>
-            <th scope="col">Questionnaire</th>
-            <th scope="col">Valeur 1</th>
-            <th scope="col">Valeur 2</th>
-            <th scope="col">Valeur 3</th>
-            <th scope="col">Valeur 4</th>
-            <th scope="col">Valeur 5</th>
-            <th scope="col">Score</th>
-            <th scope="col">Outils</th>
+        <tbody>
+            <tr>
+                <td><%= evaluation.value1 %></td>
+                <td><%= evaluation.value2 %></td>
+                <td><%= evaluation.value3 %></td>
+                <td><%= evaluation.value4 %></td>
+                <td><%= evaluation.value5 %></td>
+                <th scope="row"><%= evaluation.score %></th>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<% end %>
 
-        </tr>
-    </thead>
-
-    <tbody>
-    <% @evaluations.each do |evaluation| %>
-        <tr>
-            <td><%= evaluation.questionnaire %></td>
-            <td><%= evaluation.value1 %></td>
-            <td><%= evaluation.value2 %></td>
-            <td><%= evaluation.value3 %></td>
-            <td><%= evaluation.value4 %></td>
-            <td><%= evaluation.value5 %></td>
-            <th scope="row"><%= evaluation.score %></th>
-            <td>
-                <%= link_to 'Voir', evaluation, class: 'btn btn-success rounded-0' %>
-                <%= link_to 'Editer', edit_evaluation_path(evaluation), class: 'btn btn-primary rounded-0' %>
-                <%= link_to 'Supprimer', evaluation, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger rounded-0' %>
-            </td>
-        </tr>
-    <% end %>
-    </tbody>
-</table>
 
 
 <div class="form-actions mt-5 text-center">
